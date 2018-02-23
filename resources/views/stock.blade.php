@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net | Contact Us
+    Sailaways.net | Stock
 @endsection
 
 @extends('layouts.masterTemplate')
@@ -10,7 +10,7 @@
             <div class="content">
                 <div class="container">
                   	<div class="title m-b-md">
-                        Contact Us
+                        In Stock
                    	</div>
                 </div>
             </div>

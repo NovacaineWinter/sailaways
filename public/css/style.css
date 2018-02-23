@@ -209,3 +209,14 @@ input[type=checkbox] {
     padding: 5px;
     cursor: pointer;
 }
+
+
+.bannerimg{
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+}
+
+#homebanner{
+    background-image: url(/img/img1.jpg);
+}

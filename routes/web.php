@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'landingPageController@pageSelector');
+
 
 Route::get('/configure', function () {
     return view('configure');
@@ -21,6 +21,10 @@ Route::get('/configure', function () {
 
 Route::get('/contact', function () {
     return view('contact');
+});
+
+Route::get('/stock', function () {
+    return view('stock');
 });
 
 

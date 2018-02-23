@@ -23,6 +23,7 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{{ url('/') }}}">Home</a>
+                        <a href="{{{ url('/stock') }}}">Boats in Stock</a>
                         <a href="{{{ url('configure') }}}">Configure My Sailaway</a>
                         <a href="{{{ url('contact') }}}">Contact Us</a>
                         <!--<a href="{{ route('login') }}">Login</a>

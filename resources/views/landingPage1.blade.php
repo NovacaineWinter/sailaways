@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net | Contact Us
+    Sailaways.net
 @endsection
 
 @extends('layouts.masterTemplate')
@@ -8,10 +8,11 @@
 @section('content')
 
             <div class="content">
+                <div class="bannerimg" id="homebanner">
+                        
+                </div>
                 <div class="container">
-                  	<div class="title m-b-md">
-                        Contact Us
-                   	</div>
+                    <h1>A blank canvas to create your dream home</h1>
                 </div>
             </div>
 
