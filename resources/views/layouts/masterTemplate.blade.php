@@ -12,6 +12,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="{{{ url('css/style.css') }}}" rel="stylesheet" type="text/css">
+
+        
     </head>
 
     <body>
@@ -37,5 +39,14 @@
 
 
         @yield('content')
+
+
+        <div id="footer">
+            <div class="links">
+                <a href="{{{ url('/') }}}">Home</a>
+                <a href="{{{ url('privacy') }}}">Privacy Policy</a>
+                <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>
+            </div>
+        </div>
     </body>
 </html>

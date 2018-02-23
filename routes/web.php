@@ -28,6 +28,10 @@ Route::get('/stock', function () {
 });
 
 
+Route::get('stock/detail/{id}', function ($id) {
+    return view('stockDetail')->with('id',$id);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -14,6 +14,13 @@ html, body {
     background-color: #83817e;
 }
 
+#footer{
+    height: 69px;   
+    background-color: #83817e; 
+    padding-top: 20px;
+
+}
+
 #logoimg{    
     position: absolute;
     max-width: 33%;
@@ -219,4 +226,50 @@ input[type=checkbox] {
 
 #homebanner{
     background-image: url(/img/img1.jpg);
+}
+
+
+.boatcard{
+    border: 1px solid #a8a8a8;
+    padding: 30px;    
+    box-sizing: border-box;
+    margin-left:8%;
+    margin-bottom:50px; 
+}
+.cardimage{
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+#cta{
+    color: #fafafa;
+    text-shadow: 1px 1px #353535;
+    text-transform: uppercase;
+}
+
+#cta h3{
+    font-size: 70px;
+}
+
+
+.homecard{
+    min-height:20vw;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+}
+
+
+@media only screen and (max-width: 600px){
+    .boardcard{
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+    .cardimage{
+        height: 50vw;
+    }
 }
