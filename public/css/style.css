@@ -8,7 +8,10 @@ html, body {
     margin: 0;
 }
 
-
+#tagline{
+    font-size: 55px;
+    line-height:2.5;
+}
 #navbar{
     height: 69px;   
     background-color: #83817e;
@@ -18,12 +21,16 @@ html, body {
     height: 69px;   
     background-color: #83817e; 
     padding-top: 20px;
-
+    position:absolute;
+    width:100%;
+}
+#footimg{
+    max-width: 25vw;
 }
 
 #logoimg{    
     position: absolute;
-    max-width: 33%;
+    max-width: 25vw;
 }
 
 #navbuttons{
@@ -228,6 +235,10 @@ input[type=checkbox] {
     background-image: url(/img/img1.jpg);
 }
 
+#contactbanner{
+    background-image: url(/img/map.jpg);
+    height:35vh;
+}
 
 .boatcard{
     border: 1px solid #a8a8a8;

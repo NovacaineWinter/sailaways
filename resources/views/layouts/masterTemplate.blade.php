@@ -47,6 +47,45 @@
                 <a href="{{{ url('privacy') }}}">Privacy Policy</a>
                 <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>
             </div>
+             <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg" alt="logo"/>
         </div>
+
+
+
+
+
+
+        <script>
+
+                
+
+
+
+                function setFooterPosition(){
+                    footmargin = $('#footimg').height() - $('#footer').height();
+                    $('#footer').css('top',$(document).height()-$('#footer').height()-20 -footmargin);
+
+                    $('#footer').css('margin-top',footmargin);
+                    $('#footimg').css('right',0);
+                    $('#footimg').css('bottom',0);                  
+
+                }  
+
+                $(document).ready(function() {
+
+                    setFooterPosition();
+                    $('#footimg').click(function() {
+                        window.location.href = '{{{ url('/contact') }}}';
+                    });
+
+                });
+
+
+                $(window).resize(function() {
+                   
+                    setFooterPosition();
+                });
+
+            </script>
     </body>
 </html>

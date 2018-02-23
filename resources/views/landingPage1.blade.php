@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net
+    Sailaways.net | Home
 @endsection
 
 @extends('layouts.masterTemplate')
@@ -19,7 +19,7 @@
                 </div>
                 <section id="info">
 	                <div class="container">
-	                    <h1>A blank canvas to create your dream home</h1>
+	                    <h1 id="tagline">A blank canvas to create your dream home</h1>
 	                    <div class="row">
 
 
@@ -54,6 +54,14 @@
 
 
 	                    </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{{{ url('configure') }}}" class="btn btn-info btn-lg">Configure My Boat</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="{{{ url('stock') }}}" class="btn btn-info btn-lg">View Boats In Stock</a>
+                            </div>
+                        </div>
 	              
 	                </div>
 	            </section>
@@ -79,22 +87,24 @@
             	}	
 
 
-	            //function to deal with smoothscroll for #anchors
-	            $('a[href*="#"]').on('click', function (e) {
-	                e.preventDefault();
+            	
+  				//function to deal with smoothscroll for #anchors
+                $('a[href*="#"]').on('click', function (e) {
+                    e.preventDefault();
 
-	                //remove the anchor from the url
-	                var uri = window.location.toString();
-	                if (uri.indexOf("#") > 0) {
-	                    var clean_uri = uri.substring(0, uri.indexOf("#"));
-	                    window.history.replaceState({}, document.title, clean_uri);
-	                }
+                    //remove the anchor from the url
+                    var uri = window.location.toString();
+                    if (uri.indexOf("#") > 0) {
+                        var clean_uri = uri.substring(0, uri.indexOf("#"));
+                        window.history.replaceState({}, document.title, clean_uri);
+                    }
 
-	                // smooth scroll 
-	                $('html, body').animate({
-	                    scrollTop: $($(this).attr('href')).offset().top
-	                }, 500, 'linear');
-	            }); 
+                    // smooth scroll 
+                    $('html, body').animate({
+                        scrollTop: $($(this).attr('href')).offset().top
+                    }, 500, 'linear');
+                }); 
+	            
 
             </script>
 
