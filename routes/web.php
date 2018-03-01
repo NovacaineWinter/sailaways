@@ -15,9 +15,17 @@
 Route::get('/', 'landingPageController@pageSelector');
 
 
-Route::get('/configure', function () {
-    return view('configure');
-});
+Route::get('/configure', 'configController@index');
+Route::get('/configure/ajax', 'configController@configAjax');
+
+Route::get('/baseprice', 'dashboardController@baseprice');
+
+Route::get('/optionalextra', 'dashboardController@manageExtra');
+
+
+
+Route::get('/adminAjax', 'dashboardController@ajax');
+
 
 Route::get('/contact', function () {
     return view('contact');

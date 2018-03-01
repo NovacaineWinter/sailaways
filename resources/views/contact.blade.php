@@ -30,10 +30,10 @@
                 		<div class="boatcard col-lg-5">
                 			<h2>Email And Phone</h2>
                 			<p>
-                			info@NottinghamBoatCo.com
-                			<br><br>
-                			0115 972 8125
-                		</p>
+	                			info@NottinghamBoatCo.com
+	                			<br><br>
+	                			0115 972 8125
+	                		</p>
                 		</div>
                 	</div>
                    	

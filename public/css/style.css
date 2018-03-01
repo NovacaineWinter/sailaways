@@ -8,6 +8,48 @@ html, body {
     margin: 0;
 }
 
+
+#sidebar{
+    height: 25vh;
+    width: 20vw;
+    position: fixed;
+    top: 69px;
+    right: 0px;
+}
+
+.configopt .col-sm-2 h3{
+    font-size:1.2em;
+}
+
+.configopt{
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    padding: 12px;
+}
+
+#configurationselector label{
+    padding: 25px;
+    border: 1px solid #e8e8e8;
+    text-transform: uppercase;
+    /* margin: 10px; */
+    font-size: 20px;
+    /* border-radius:10px; */
+}
+
+#configurationselector input[type="radio"]:checked+label{
+    /* background-color: #48b4b2; */
+    color: #353535;
+    font-weight: 500;
+    /* border: 1px solid #999999; */
+    box-shadow: 1px 1px 12px #999999;
+    text-decoration: underline;
+    font-size: 19px
+}
+
+.ajaxradios{
+    display:none;
+}
+
 #tagline{
     font-size: 55px;
     line-height:2.5;
@@ -15,6 +57,8 @@ html, body {
 #navbar{
     height: 69px;   
     background-color: #83817e;
+    position: fixed;
+    width: 100vw;
 }
 
 #footer{
@@ -24,13 +68,14 @@ html, body {
     position:absolute;
     width:100%;
 }
-#footimg{
-    max-width: 25vw;
+
+.brandingimg{
+    max-width: 20vw;
 }
 
 #logoimg{    
     position: absolute;
-    max-width: 25vw;
+    z-index: 2;
 }
 
 #navbuttons{
@@ -94,15 +139,14 @@ input[type=checkbox] {
 
 .configurator-title{
     font-weight: 300;
-    color: #fafafa;
-    line-height: 55px;
-    font-size: 26px;
+    color: #333;
+    font-size: 20px;
     width:70%;
+    padding-left: 15px;
 }
 .configurator-price{
     font-weight: 300;
-    color: #fafafa;
-    line-height: 55px;
+    color: #333;
     font-size: 18px;
 }
 
@@ -113,9 +157,9 @@ input[type=checkbox] {
     background: #333;
     margin: 4px;
 
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
     position: relative;
 
     -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
@@ -149,9 +193,9 @@ input[type=checkbox] {
     width: 34px;
     height: 20px;
 
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 
     -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
@@ -183,7 +227,7 @@ input[type=checkbox] {
 
 .checkboxRow{
     background-color:#a8a8a8;
-    margin:10px;
+    margin:10px 0px;
 }
 
 .featureRowHeaderTable{
@@ -193,12 +237,13 @@ input[type=checkbox] {
 
 #pricing-table{
     margin:auto;
+    width:100%;
     color:#353535;
 }
 
 .slideaway{
     display:none;
-    margin: 0px 10px;
+    /* margin: 0px 10px; */
     margin-top: -10px;
     border: 1px solid #a8a8a8;
 }
@@ -215,13 +260,14 @@ input[type=checkbox] {
     max-height:400px;
 }
 .expand-option p{
-    border:3px solid #fafafa;
-    font-size:16px;
-    font-weight:900;
+    font-size: 16px;
+    font-weight: 900;
     text-align: center;
-    margin-top: 16px;
+    padding-top: 3px;
+    margin-bottom: 0px;
     padding: 5px;
     cursor: pointer;
+    color:#333;
 }
 
 
@@ -274,6 +320,40 @@ input[type=checkbox] {
 }
 
 
+
+
+
+#configuration-table{
+    width:100%;
+    max-width:1100px;
+    margin:0px auto;
+    margin-top:100px;
+    min-height:55vh;
+}
+
+#configuration-table .row .col-sm-4{
+    border:1px solid #e8e8e8;
+    text-align: center;
+    box-sizing: border-box;
+    padding:10px;
+}
+#configuration-table .row .col-sm-4 h2{
+    font-size: 20px;
+}
+#configuration-table .row .col-sm-4 p{
+    font-size:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 600px){
     .boardcard{
         margin-left:10px;
@@ -284,3 +364,5 @@ input[type=checkbox] {
         height: 50vw;
     }
 }
+
+

@@ -1,0 +1,67 @@
+.tablecell{
+	width:160px;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: -4.5px;
+	text-align:center;
+}
+
+.leftborder{
+	border-left: 1px solid #e8e8e8;
+}
+
+.withborder{
+	border:1px solid #e8e8e8;
+}
+
+.cellheight{
+	height:40px;
+	margin-top:-1px;
+}
+
+.tableHeaderRow{
+	font-weight: 600;
+	font-size:14px;
+}
+.blackout{
+	background-color:#e7e7e7;
+}
+
+.thinline{
+	padding:0px !important;
+	margin:0px !important;
+	height:1px;
+}
+.fatline{
+	padding:0px !important;
+	margin:0px !important;
+	height:10px;	
+}
+
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 3px 10px;
+}
+
+.divTableBody {
+	display: table-row-group;
+}
+
+.cellcentered{
+	text-align: center;
+}
+
+.numinput{
+	width:85px;
+}
+
+.deleteoption{
+	color:red;
+}

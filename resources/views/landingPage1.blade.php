@@ -81,9 +81,13 @@
             	function setElementPositions(){
             		$('#cta').css('padding-top',($('#homebanner').height()-$('#cta').height()-50));
 
-            		size=(($('.vertcenteredtext').parent().height() - $('.vertcenteredtext').height())/2);
-            		$('.vertcenteredtext').css('padding-top',size);
-            		$('.vertcenteredtext').css('padding-bottom',size);
+                    $('.vertcenteredtext').each(function() {
+
+                        size=(($(this).parent().height() - $(this).height())/2);
+                        $(this).css('padding-top',size);
+                        $(this).css('padding-bottom',size); 
+
+                    });            		
             	}	
 
 
