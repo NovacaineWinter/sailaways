@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<a href="{{{ url('home') }}}"><h3>Back</h3></a>
 <h1 style="text-align: center;">Set Base prices</h1>
 	<div class="container">
 

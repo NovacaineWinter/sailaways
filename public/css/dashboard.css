@@ -65,3 +65,35 @@
 .deleteoption{
 	color:red;
 }
+
+
+#optionalExtrasList{
+	background-color: #fafafa;
+	color:#353535;
+	min-height:300px;
+	border:1px solid #e8e8e8;
+    margin-top: 50px;
+}
+
+
+.dashbutton{
+	padding:10px;
+	border:1px solid #e8e8e8;
+	border-radius:3px;
+	float:left;
+	cursor:pointer;
+	text-align: center;
+}
+
+.dashbutton:hover{
+	background-color:#e1e1e1;
+	color:#333;
+}
+
+.dash-highlighted{
+	background-color:orange;
+}
+
+.unpaddedrow{
+	margin: 0px 0px;
+}

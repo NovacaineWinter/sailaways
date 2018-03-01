@@ -15,6 +15,11 @@ class dashboardController extends Controller
 {
 
 
+    public function listOptionalExtras(Request $request){
+        $extras = option::all();
+        return view('inside.listOptionalExtras')->with('extras',$extras);
+    }
+
     public function baseprice(Request $request){
     	$info = [
 			"lengths"=> length::all(),
@@ -51,6 +56,18 @@ class dashboardController extends Controller
     					return $target->baseprice;
     				}
     				break;
+
+                case 'createNewOptionalExtra':
+                    $extra = new option;
+                    $extra->name = 'New Optional Extra';
+                    $extra->title ='';
+                    $extra->description ='';
+                    $extra->price_ex_vat =0;
+                    $extra->highlighted = true;
+                    $extra->save();
+                    return $extra->id;
+                    break;
+
 
     		}
     	}

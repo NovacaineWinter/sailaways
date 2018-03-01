@@ -51,7 +51,8 @@ class InitialTables extends Migration
             $b->string('title'); 
             $b->string('description');
             $b->decimal('price_ex_vat');
-            $b->string('img')->nullable();           
+            $b->string('img')->nullable();    
+            $b->boolean('highlighted');       
             $b->timestamps();
         });
 

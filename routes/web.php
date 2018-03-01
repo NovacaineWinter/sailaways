@@ -23,6 +23,10 @@ Route::get('/baseprice', 'dashboardController@baseprice');
 Route::get('/optionalextra', 'dashboardController@manageExtra');
 
 
+Route::get('/extras', 'dashboardController@listOptionalExtras');
+
+
+
 
 Route::get('/adminAjax', 'dashboardController@ajax');
 

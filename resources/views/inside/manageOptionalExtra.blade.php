@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<a href="{{{ url('extras') }}}"><h3>Back</h3></a>
 <h1 style="text-align: center;">Edit Optional Extra</h1>
 	<div class="container">
 

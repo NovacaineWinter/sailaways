@@ -12,6 +12,38 @@ function url(uri){
 
 function doStuff(){
 
+
+
+	$('.dash-clickable').click(function() {
+		target = $(this).attr('target');
+		method = $(this).attr('method');
+		value = $(this).attr('value');
+		$.ajax({
+            url: url('/adminAjax'),
+            method: 'GET',
+            data: {
+                ajaxmethod: method,
+                targetID:   target,
+                value:      value,
+
+            },
+            success: function(response) {
+            	console.log(response);
+            	$('#baseprice-for-id-'+target).attr('old',response); 
+                $('.updateablenumber').attr('readonly','readonly');
+            },
+            
+            error: function(response) {
+                console.log('There was an error - it was:');
+                console.dir(response);
+            }
+        });
+	});
+
+
+
+
+
 	$('.updateablenumber').dblclick(function() {
 	    if($(this).attr('readonly')=='readonly'){
 	        $(this).removeAttr('readonly');
