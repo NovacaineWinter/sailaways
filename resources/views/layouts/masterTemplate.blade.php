@@ -32,20 +32,14 @@
         <img src="{{{ url('img/logo.png') }}}" id="logoimg" class="brandingimg" alt="logo"/>
     
         <div id="navbar">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{{ url('/') }}}">Home</a>
-                        <a href="{{{ url('stock') }}}">Boats in Stock</a>
-                        <a href="{{{ url('configure') }}}">Configure My Sailaway</a>
-                        <a href="{{{ url('contact') }}}">Contact Us</a>
-                        <!--<a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a> -->
-                    @endauth
-                </div>
-            @endif
+            <div class="top-right links">
+                <a href="{{{ url('/') }}}">Home</a>
+                <a href="{{{ url('stock') }}}">Boats in Stock</a>
+                <a href="{{{ url('configure') }}}">Configure My Sailaway</a>
+                <a href="{{{ url('contact') }}}">Contact Us</a>
+                <!--<a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a> -->
+            </div>
         </div>
         <div style="width:100%;height:69px;">&nbsp;</div>
 

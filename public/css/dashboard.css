@@ -97,3 +97,17 @@
 .unpaddedrow{
 	margin: 0px 0px;
 }
+
+
+#edit-optional-extra-container h3{
+	text-align: center;
+}
+
+.option-attribute{
+	margin:10px;
+	border:1px solid #e8e8e8;
+}
+
+.optionImageContainer img{
+	max-width:200px;
+}

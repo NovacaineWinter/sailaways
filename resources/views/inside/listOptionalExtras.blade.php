@@ -14,7 +14,7 @@
 						<div class="col-sm-2"></div>
 					</div>
 				@foreach($extras->sortBy('name')->sortByDesc('highlighted') as $extra)
-					<div class="row unpaddedrow @if($extra->highlighted) dash-highlighted @endif">
+					<div class="row unpaddedrow @if($extra->highlighted) dash-highlighted @endif" style="border: 1px solid #e8e8e8;">
 						<div class="col-sm-3">{{{$extra->name}}}</div>
 						<div class="col-sm-3">
 							@if($extra->configurations->count()>0) 

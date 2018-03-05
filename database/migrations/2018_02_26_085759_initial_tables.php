@@ -8,6 +8,7 @@ use App\hull_style;
 use App\configuration;
 use App\length;
 use App\width;
+use App\option_category;
 
 class InitialTables extends Migration
 {
@@ -52,7 +53,9 @@ class InitialTables extends Migration
             $b->string('description');
             $b->decimal('price_ex_vat');
             $b->string('img')->nullable();    
-            $b->boolean('highlighted');       
+            $b->boolean('highlighted');
+            $b->integer('catalogue_id')->nullable();  
+            $b->integer('option_category_id')->nullable();    
             $b->timestamps();
         });
 
@@ -75,6 +78,12 @@ class InitialTables extends Migration
             $e->timestamps();
         });
 
+        Schema::create('option_categories', function (Blueprint $f) {
+            $f->increments('id');
+            $f->string('name');      
+            $f->timestamps();
+        });        
+
 
         //seed with the default data
 
@@ -88,6 +97,14 @@ class InitialTables extends Migration
             ['name'=>'Narrowboat','description'=>'Narrowboats','img'=>'img/nb.jpg'],
             ['name'=>'Widebeam','description'=>'Widebeams from 9-12ft wide','img'=>'img/wb.jpg'],
         ];
+
+        $optionCategories = ['Paintwork','External','Engine & Systems','Glazing','Electrical','Internal'];
+
+        foreach($optionCategories as $opt){
+            $optionCategoryToCreate = new option_category;
+            $optionCategoryToCreate->name = $opt;
+            $optionCategoryToCreate->save();
+        }
 
         $wideWidths =[9,10,11,12];
         $narrowWidths= [6];
