@@ -176,8 +176,9 @@
 											
 											
 										?>
-											<input type="checkbox" class="optionconfigcheck" config="{{{$config_id}}}" option="{{{ $info['item']->id }}}" @if($needsToBeChecked) checked @endif>
-
+										<label for="check{{{$config_id}}}" class="checklabel">
+											<input type="checkbox" class="optionconfigcheck" id="check{{{$config_id}}}" config="{{{$config_id}}}" option="{{{ $info['item']->id }}}" @if($needsToBeChecked) checked @endif>
+										</label>
 									</div>
 
 								@endforeach

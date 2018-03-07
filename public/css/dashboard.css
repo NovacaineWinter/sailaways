@@ -47,7 +47,7 @@
 }
 .divTableCell, .divTableHead {
 	display: table-cell;
-	padding: 3px 10px;
+	/*padding: 3px 10px;*/
 }
 
 .divTableBody {
@@ -58,6 +58,11 @@
 	text-align: center;
 }
 
+.checklabel{
+	width:30px;
+	height:30px;
+}
+
 .numinput{
 	width:85px;
 }
@@ -66,6 +71,9 @@
 	color:red;
 }
 
+.optionconfigcheck{
+	margin-left:9px;
+}
 
 #optionalExtrasList{
 	background-color: #fafafa;
