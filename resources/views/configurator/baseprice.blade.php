@@ -1,27 +1,31 @@
 
-<div class="descriptioncontainer">
+<div class="">
+<img class="configuratorImg" src="{{{ $target->hull_style->img }}}" alt="boat"/>
+<h2>{{{ $target->hull_style->name }}}</h2>
 
-    <div class="col-sm-12">
+    <div id="boatsummary">
 
-        <table id="pricing-table">
+        <div class="tblrow clearfix">
+            <div class="halfcell leftcell">Basic</div>
 
-            <tr>
-                <td>Base</td>
-                <td><div id="base-price-display"></div></td>
-            </tr>
+            <div class="halfcell rightcell" id="base-price-display"></div>
+        </div>
 
-            <tr>
-                <td>Extras</td>
-                <td><div id="extra-price-display">&pound;0</div></td>
-            </tr>
+        <div class="tblrow clearfix">
+            <div class="halfcell leftcell"><h4>Price</h4></div>
+            <div class="halfcell rightcell"><h4 id="total-price-display"></h4></div>
+            <div class="tblrow">Ex VAT</div>
+        </div>
 
-            <tr>
-                <td>Total</td>
-                <td><div id="total-price-display"></div></td>
-            </tr>
-        </table>    
     </div>
-    <div class="col-sm-12">
+
+   <div id="extras">
+
+        <div class="tblrow clearfix">
+            <div class="halfcell leftcell">Extras</div>
+            <div class="halfcell rightcell" id="extra-price-display">&pound;0</div>
+        </div>
+
         <ul id="optionslist">
             
         </ul>

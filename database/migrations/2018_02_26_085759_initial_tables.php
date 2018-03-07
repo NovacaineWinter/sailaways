@@ -95,7 +95,7 @@ class InitialTables extends Migration
 
         $hullStyles = [
             ['name'=>'Narrowboat','description'=>'Narrowboats','img'=>'img/nb.jpg'],
-            ['name'=>'Widebeam','description'=>'Widebeams from 9-12ft wide','img'=>'img/wb.jpg'],
+            ['name'=>'Widebeam','description'=>'Widebeams from 9-12ft wide','img'=>'img/img1.jpg'],
         ];
 
         $optionCategories = ['Paintwork','External','Engine & Systems','Glazing','Electrical','Internal'];

@@ -8,14 +8,28 @@ html, body {
     margin: 0;
 }
 
+.configuratorImg{
+    max-width: 18vw;
+    margin: 40px 0px;
+}
 
 #sidebar{
-    height: 25vh;
+    height: 100vh;
     width: 20vw;
     position: fixed;
     top: 69px;
     right: 0px;
+    border-left: 1px solid #e8e8e8;
 }
+
+#sidebar ol li{
+    padding:15px 0px;
+}
+
+#sidebar .liunpadded li{
+    padding:0px;
+}
+
 
 .configopt .col-sm-2 h3{
     font-size:1.2em;
@@ -134,7 +148,7 @@ input[type=checkbox] {
     visibility: hidden;
 }
 
-#configurator-container{max-width:900px;}
+#configurator-container{max-width:80vw;margin-left:0px;}
 
 
 .configurator-title{
@@ -346,12 +360,53 @@ input[type=checkbox] {
 
 
 
+.tblrow{
+    width:100%;
+}
+.halfcell{
+    width:50%;
+    float: left;
+}
+
+.rightcell{
+    text-align: left;
+    padding-left:20px;
+}
+.leftcell{
+    text-align: right;
+    padding-right:20px;
+}
+
+
+#extras{
+    border-top:1px solid #e8e8e8;
+    padding-top:30px;
+}
 
 
 
 
 
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
 
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
 
 
 @media only screen and (max-width: 600px){

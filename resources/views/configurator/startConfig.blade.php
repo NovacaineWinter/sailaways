@@ -3,7 +3,7 @@
         <div class="title m-b-md">
             Configure
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12" style="max-width:900px;margin:auto;">
             <div id="configurationselector">
                 <div class="col-sm-12 configopt row" id="hull-selection">
                     <div class="col-sm-2">
@@ -81,7 +81,33 @@
 
                 @endif
                 <div id="sidebar">
-                    @include('configurator.baseprice')
+                    @if($info['complete'])
+                
+                        @include('configurator.baseprice', ['target' => $info['target']])                    
+
+                    @else
+
+                        <h2>Start your configuration</h2>
+                        <h4>How it works...</h4>
+                        <ol>
+                            <li>Choose the type of Sailaway you want</li>
+                            <li>Choose the level of fitout you want</li>
+                            <div class="col-sm-12 liunpadded">
+                                <ul>
+                                    <li>Hull only is a bare metal hull</li>
+                                    <li>Sailaway is delivered in primer with an engine and gearbox</li>
+                                    <li>Sailaway plus is fully lined out with veneered ply</li>
+                                </ul>
+                            </div>
+                            <li>Choose your Dimensions</li>
+                            <li>Choose your optional extras</li>
+                            <div class="col-sm-12">
+                                Add optional extras to your specification by clicking the slider to turn an option on
+                            </div>
+                        </ol>
+                        
+                    @endif
+                    
                 </div>                    
             </div>
         </div>
