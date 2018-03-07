@@ -17,7 +17,7 @@
                 <table class="featureRowHeaderTable">
                     <tr>
                         <td class="configurator-title">{{{ $option->title }}}</td>
-                        <td class="configurator-price">&pound;{{{ $option->price_ex_vat }}}<td>
+                        <td class="configurator-price">&pound;{{{ substr($option->price_ex_vat,0,-3) }}}<td>
                         <td>
                             <div class="slideCheckbox">                      
                                 <input type="checkbox"  title="{{{ $option->title }}}" class="added-option" price="{{{ $option->price_ex_vat }}}" value="None" id="slide{{{$n}}}" name="{{{ /*$option->ref*/ $option->id }}}" />
