@@ -73,6 +73,7 @@ html, body {
     background-color: #83817e;
     position: fixed;
     width: 100vw;
+    z-index: 2;
 }
 
 #footer{
@@ -89,7 +90,7 @@ html, body {
 
 #logoimg{    
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
 
 #navbuttons{
@@ -381,6 +382,8 @@ input[type=checkbox] {
 #extras{
     border-top:1px solid #e8e8e8;
     padding-top:30px;
+    overflow-y: scroll;
+    height: 40vh;    
 }
 
 
