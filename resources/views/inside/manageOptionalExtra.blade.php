@@ -47,11 +47,23 @@
 			<div class="col-sm-6">
 				<select style="margin-top:10px;"  class="optiontext" target="{{{$info['item']->id}}}" method="changeOptionCategory">
 					<option value="0">Select Category...</option>
-					@foreach($info['categories'] as $cat)
+					@foreach($info['categories']->sortBy('position') as $cat)
 						<option value="{{{ $cat->id }}}" @if($info['item']->option_category_id == $cat->id) selected @endif >{{{ $cat->name }}}</option>
 					@endforeach
 				</select>				
 			</div>
+		</div>
+
+
+
+		<!-- Standard Feature -->
+		<div class="row option-attribute">
+			<div class="col-sm-6 text-right">
+				<h4>Standard feature:</h4> 
+			</div>
+			<div class="col-sm-6">
+				<input type="checkbox" class="standardFeature" method="updateIsStandardFeature" target="{{{$info['item']->id}}}" >
+			</div>	
 		</div>
 
 

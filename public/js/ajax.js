@@ -8,17 +8,104 @@ function url(uri){
 }
 
 
+
+
+function compileData(){
+    delete info;
+    info = {} 
+
+    $('input[name=hull]').each(function() {
+        if($(this).prop('checked')){
+            info.hull = $(this).val();
+        }
+    });    
+
+    $('input[name=fitout]').each(function() {
+        if($(this).prop('checked')){
+            info.fitout = $(this).val();
+        }
+    }); 
+
+    $('input[name=width]').each(function() {
+        if($(this).prop('checked')){
+            info.width = $(this).val();
+        }
+    });
+
+    $('input[name=length]').each(function() {
+        if($(this).prop('checked')){
+            info.length = $(this).val();
+        }
+    });
+
+    return info;
+}
+
+
+function setElementPositions(){
+    
+    setFooterPosition();
+
+    $('#cta').css('padding-top',($('#homebanner').height()-$('#cta').height()-50));
+
+    $('.vertcenteredtext').each(function() {
+
+        size=(($(this).parent().height() - $(this).height())/2);
+        $(this).css('padding-top',size);
+        $(this).css('padding-bottom',size); 
+
+    }); 
+    console.log('elemetns');                
+}   
+
+
+
+
+function setFooterPosition(){
+    console.log('footer position set');
+    footmargin = $('#footimg').height() - $('#footer').height();
+    $('#footer').css('top',$(document).height()-$('#footer').height()-20 +69 -footmargin);
+
+    $('#footer').css('margin-top',footmargin);
+    $('#footimg').css('right',0);
+    $('#footimg').css('bottom',0);                  
+
+} 
+
+function parseOptions(options){
+    optionsString = '';
+    options.forEach(function(item,index) {
+        optionsString = optionsString + '<li>'+item+'</li>';
+    });
+    $('#optionslist').html(optionsString);
+}
+
+
+
+
+
+/* =================================================================================================================================*/
+/* ====================================       Start CompleteJS()     ===============================================================*/
+/* =================================================================================================================================*/
+
+
+
+
 function completeJS(){
+    
 
     setElementPositions();
+console.log('completejs');
     $(window).resize(setElementPositions);
 
+
+    $('#logoimg').click(function() {
+        window.location.href = url('/');
+    });
 
     $('#footimg').click(function() {
         window.location.href = url('/contact');
     });
-
-
 
 
  
@@ -116,6 +203,26 @@ function completeJS(){
     });
 
 
+
+//function to deal with smoothscroll for #anchors
+    $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        //remove the anchor from the url
+        var uri = window.location.toString();
+        if (uri.indexOf("#") > 0) {
+            var clean_uri = uri.substring(0, uri.indexOf("#"));
+            window.history.replaceState({}, document.title, clean_uri);
+        }
+
+        // smooth scroll 
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 500, 'linear');
+    }); 
+
+
+
 /* =================================================================================================================================*/
 /* ====================================       End of CompleteJS()     ==============================================================*/
 /* =================================================================================================================================*/
@@ -125,72 +232,3 @@ function completeJS(){
 $(document).ready(completeJS);
 $(document).ajaxComplete(completeJS);
 
-
-
-function compileData(){
-    delete info;
-    info = {} 
-
-    $('input[name=hull]').each(function() {
-        if($(this).prop('checked')){
-            info.hull = $(this).val();
-        }
-    });    
-
-    $('input[name=fitout]').each(function() {
-        if($(this).prop('checked')){
-            info.fitout = $(this).val();
-        }
-    }); 
-
-    $('input[name=width]').each(function() {
-        if($(this).prop('checked')){
-            info.width = $(this).val();
-        }
-    });
-
-    $('input[name=length]').each(function() {
-        if($(this).prop('checked')){
-            info.length = $(this).val();
-        }
-    });
-
-    return info;
-}
-
-
-function setElementPositions(){
-
-    setFooterPosition();
-
-    $('#cta').css('padding-top',($('#homebanner').height()-$('#cta').height()-50));
-
-    $('.vertcenteredtext').each(function() {
-
-        size=(($(this).parent().height() - $(this).height())/2);
-        $(this).css('padding-top',size);
-        $(this).css('padding-bottom',size); 
-
-    });                 
-}   
-
-
-
-
-function setFooterPosition(){
-    footmargin = $('#footimg').height() - $('#footer').height();
-    $('#footer').css('top',$(document).height()-$('#footer').height()-20 +69 -footmargin);
-
-    $('#footer').css('margin-top',footmargin);
-    $('#footimg').css('right',0);
-    $('#footimg').css('bottom',0);                  
-
-} 
-
-function parseOptions(options){
-    optionsString = '';
-    options.forEach(function(item,index) {
-        optionsString = optionsString + '<li>'+item+'</li>';
-    });
-    $('#optionslist').html(optionsString);
-}

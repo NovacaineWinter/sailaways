@@ -72,6 +72,36 @@ function doStuff(){
 	});
 
 
+	$('.standardFeature').change(function() {
+		
+		target = $(this).attr('target');
+
+		if($(this).prop('checked')){
+			value=1;
+		}else{
+			value=0;
+		}
+			
+		$.ajax({
+            url: url('/adminAjax'),
+            method: 'GET',
+            data: {
+                ajaxmethod: 'setStandardFeature',
+                target:   	target,
+                value:      value,
+
+            },
+            success: function(response) {
+            	
+            },
+            
+            error: function(response) {
+                console.log('There was an error - it was:');
+                console.dir(response);
+            }
+        });		
+	});
+
 	$('.optiontext').change(function() {
 		target = $(this).attr('target');
 		method = $(this).attr('method');

@@ -188,6 +188,16 @@ class dashboardController extends Controller
                     break;
 
 
+                case 'setStandardFeature':
+                    if($request->has('target') && $request->has('value')){
+                        $option = \App\option::find($request->get('target'));
+                        $option->is_standard = $request->get('value');
+                        $option->save();
+                        return 'ok';
+                    }
+                    break;
+
+
                 case 'newImageForOption':
                     return 'ok';
                     break;
