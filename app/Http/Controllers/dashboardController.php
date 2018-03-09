@@ -5,6 +5,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\configuration;
 use App\length;
 use App\hull_style;
@@ -35,25 +37,24 @@ class dashboardController extends Controller
     }
 
 	public function manageExtra(Request $request){
-        if($request->hasFile('fileToUpload')){
-            return 'Ok';
-        }else{
 
-            if($request->has('targetextra') && option::find($request->get('targetextra'))){
-            	$info = [
-        			"lengths"=> length::all(),
-        			"hulls"	=> hull_style::all(),	
-        			"fitouts"=> fitout_level::all(),
-        			"widths"=> width::all(),
-        			"request"=>$request,
-                    "item"=> option::find($request->get('targetextra')),
-                    "categories"=>option_category::all(),
-        		];
-            	return view('inside.manageOptionalExtra')->with('info',$info);
-            }else{
-                return redirect('extras');
-            }
+        if($request->has('targetextra') && option::find($request->get('targetextra'))){
+            $option = option::find($request->get('targetextra'));
+        	$info = [
+    			"lengths"=> length::all(),
+    			"hulls"	=> hull_style::all(),	
+    			"fitouts"=> fitout_level::all(),
+    			"widths"=> width::all(),
+    			"request"=>$request,
+                "item"=> $option,
+                "categories"=>option_category::all(),
+                "img"=> url(Storage::url($option->img)),
+    		];
+        	return view('inside.manageOptionalExtra')->with('info',$info);
+        }else{
+            return redirect('extras');
         }
+    
     }
 
     public function ajax(Request $request){
@@ -208,7 +209,14 @@ class dashboardController extends Controller
 
 
     public function imageForOption(Request $request){
-        if($request->file('fileToUpload')){echo 'OK';}else{echo 'Not Ok';}
-        dd($request);
+        if($request->hasFile('input_img') && $request->has('target')){
+            $option = \App\option::find($request->get('target'));
+            $option->img = $request->file('input_img')->store('public');
+            $option->save();
+
+            return redirect('optionalextra?targetextra='.$request->get('target'));
+        }else{
+            echo 'Not Ok';
+        }
     }
 }

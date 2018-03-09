@@ -1,7 +1,10 @@
 <div style="margin-left: -15px;margin-right: 15px; padding-bottom:100px">
     <input type="hidden" id="baseprice" value="{{{$target->baseprice}}}">
 
-    <?php $n=0; ?>
+    <?php 
+    $n=0; 
+    use Illuminate\Support\Facades\Storage;
+    ?>
     <h1>Extras</h1>
 
 
@@ -45,7 +48,9 @@
 
                 <div class="slideaway col-sm-12" id="slideaway{{{$n}}}">
                     <div class="imagecontainer">
-                        <img src="{{ $option->img }}">
+                        @if($option->img != null)
+                            <img src="{{ url(Storage::url($option->img)) }}">
+                        @endif
                     </div>
                     <div class="descriptioncontainer">
                         <p>{{{ $option->description }}}</p>

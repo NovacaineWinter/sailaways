@@ -29,7 +29,8 @@ Route::get('/extras', 'dashboardController@listOptionalExtras');
 
 
 Route::get('/adminAjax', 'dashboardController@ajax');
-Route::get('/adminAjax/imageupload/option', 'dashboardController@imageForOption');
+
+Route::post('/adminAjax/imageupload/option', 'dashboardController@imageForOption');
 
 
 Route::get('/contact', function () {

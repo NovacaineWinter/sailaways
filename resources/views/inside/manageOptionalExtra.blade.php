@@ -111,17 +111,18 @@
 				<h4>Image</h4>				
 			</div>
 			<div class="col-sm-6 optionImageContainer">
-				<img src="{{ $info['item']->img }}">
+				<img src="{{ $info['img'] }}">
 			</div>
 			<div class="col-sm-12" style="margin-top:10px;">
 				<div class="col-sm-6 text-right">
 					<p>Change</p>
 				</div>
 				<div class="col-sm-6">
-					<form  id="imgform" method="get" action="{{{url('/adminAjax/imageupload/option')}}}" enctype="multipart/form-data">
+					<form  id="imgform" method="post" action="{{{url('/adminAjax/imageupload/option')}}}" enctype="multipart/form-data">
+						{{ csrf_field() }}
 						<input type="hidden" name="targetextra" value="{{{ $info['item']->id }}}">
 						<input type="hidden" name="target" value="{{{ $info['item']->id }}}">
-						<input type="file" name="fileToUpload" id="fileToUpload">
+						<input type="file" name="input_img" id="fileToUpload">
 						<input type="submit" value="upload" style="display:none;" id="uploadbutton">
 					</form>
 				</div>
