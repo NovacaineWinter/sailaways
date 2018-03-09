@@ -95,7 +95,7 @@ function completeJS(){
     
 
     setElementPositions();
-console.log('completejs');
+
     $(window).resize(setElementPositions);
 
 
@@ -200,6 +200,7 @@ console.log('completejs');
     $('.expand-option').click(function() {
         target = $(this).attr('target');
         $('#slideaway'+target).slideToggle();
+        setElementPositions();
     });
 
 
