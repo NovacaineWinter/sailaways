@@ -3,35 +3,31 @@
     Sailaways.net | Stock
 @endsection
 
-<?php 
-
-$boats = [];
-
-$boats[] = array(
-	'id'	=>1,
-	'title'=>"60' x 12' Square Stern Cruiser",
-	'img'=>url('/img/stock/1/img1.jpg'),
-	'desc'=>'Finished in Oxford Blue, this striking widebeam could be your perfect project',
-);
-
-$boats[] = array(
-	'id'	=>2,
-	'title'=>"60' x 9' Square Stern Cruiser",
-	'img'=>url('/img/stock/1/img4.jpg'),
-	'desc'=>'A wonderful boat, currenlty in primer ready for your choice of paintwork, could this be your future home?',
-);
-?>
 
 @extends('layouts.masterTemplate')
 
 @section('content')
+		<a href="{{{ url('/stock') }}}" class="btn btn-lg btn-info pull-left" style="position: relative;top: 110px;left: 20px;">Back</a>
 
             <div class="content">
                 <div class="container">
                   	<div class="title m-b-md">
-                        Boat {{{$id}}}
+                        Boat {{{$info['boat']->id}}}
                    	</div>
 
+
+                   	<div class="row">
+                   		<div class="col-sm-6 imagetile" target="{{{ $info['boat']->img->first()->src }}}"></div>
+                   		<div class="col-sm-6">{{{ $info['boat']->description }}}</div>
+                   	</div>
+                   	<h2>Images</h2>
+                   	<div class="row">
+                   		@foreach($info['boat']->img as $img)
+                   			<div class="col-sm-4" style="padding:15px">
+                   				<div class="imagetile" target="{{{ $img->src }}}"></div>
+                   			</div>
+                   		@endforeach
+                   	</div>
                 </div>
             </div>
 

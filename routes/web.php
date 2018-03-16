@@ -37,14 +37,16 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/stock', function () {
-    return view('stock');
-});
+
+Route::get('/stock', 'stockBoatController@index');
+Route::get('/stock/detail', 'stockBoatController@detail');
 
 
+/*
 Route::get('stock/detail/{id}', function ($id) {
     return view('stockDetail')->with('id',$id);
 });
+*/
 
 Auth::routes();
 
