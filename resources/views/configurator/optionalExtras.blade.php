@@ -30,7 +30,7 @@
 
                                 <div class="conf-price rowitemright">@if(!$option->is_standard) &pound;{{{ substr($option->price_ex_vat,0,-3) }}} @endif</div>
                             </td>                        
-                            <td>
+                            <td class="config-slider-container">
                                  @if(!$option->is_standard) 
                                 <div class="slideCheckbox rowitem">                                                        
                                     <input type="checkbox"  title="{{{ $option->title }}}" class="added-option" price="{{{ $option->price_ex_vat }}}" value="None" id="slide{{{$n}}}" name="{{{ /*$option->ref*/ $option->id }}}" />

@@ -9,9 +9,18 @@
         <title>@yield('title')</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <!--<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">-->
+        <link href="{{{url('/css/fonts.css')}}}" rel="stylesheet" type="text/css">
+
+        <!-- jQuery -->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <script src="{{{url('/js/jquery.min.js')}}}"></script>
+
+        <!-- Bootstrap -->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
+        <link href="{{{url('/css/bootstrap.css')}}}" rel="stylesheet" type="text/css">
+        
+        <!-- Application styles -->
         <link href="{{{ url('css/style.css') }}}" rel="stylesheet" type="text/css">
 
 

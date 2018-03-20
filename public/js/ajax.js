@@ -196,7 +196,7 @@ function completeJS(){
         opts = [];
         $('.added-option').each(function() {
             if($(this).is(':checked')){
-                extras = extras + parseFloat($(this).attr('price'));
+                extras = extras + parseFloat(Math.round($(this).attr('price')));
                 opts.push($(this).attr('title'));
             }                                
         });

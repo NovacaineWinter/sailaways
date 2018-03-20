@@ -567,6 +567,29 @@ html[xmlns] .clearfix {
     }
 }
 
+@media screen and (max-width: 999px) {
+
+    #sidebar{
+        width:100%;
+        position:initial;
+        height:initial;
+        text-align:left;
+        padding-top:50px;
+    }
+    #configurator-container{
+        width:100vw;
+        max-width:100vw;
+    }
+    .configurator-title{
+        width:60%;
+        font-size: 14px;
+    }
+
+    .config-slider-container{
+        min-width: 165px;
+    }
+}
+
 @media screen and (max-width: 575px) {
 
     .homecard{
