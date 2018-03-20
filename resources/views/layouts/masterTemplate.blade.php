@@ -32,7 +32,7 @@
         <img src="{{{ url('img/logo.png') }}}" id="logoimg" class="brandingimg" alt="logo"/>
     
         <div id="navbar">
-            <div class="top-right links">
+            <div class="top-right links pcdevice" id="fullwidth">
                 <a href="{{{ url('/') }}}">Home</a>
                 <a href="{{{ url('stock') }}}">Boats in Stock</a>
                 <a href="{{{ url('configure') }}}">Configure My Sailaway</a>
@@ -40,12 +40,28 @@
                 <!--<a href="{{ route('login') }}">Login</a>
                 <a href="{{ route('register') }}">Register</a> -->
             </div>
+
+            <div class="top-right links mobiledevice" id="expand-nav-button">
+                <a href="">Menu</a>
+            </div>
+
+            <div class="top-right links mobiledevice" id="narrowNav">
+                <ul>
+                    <li><a href="{{{ url('/') }}}">Home</a></li>
+                    <li><a href="{{{ url('stock') }}}">Boats in Stock</a></li>
+                    <li><a href="{{{ url('configure') }}}">Configure My Sailaway</a></li>
+                    <li><a href="{{{ url('contact') }}}">Contact Us</a></li>
+                </ul>
+                <!--<a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a> -->
+            </div>
+
+        </div>       
+
+        <div id="content-holder">
+
+            @yield('content')
         </div>
-        <div style="width:100%;height:69px;">&nbsp;</div>
-
-
-        @yield('content')
-
 
         <div id="footer">
             <div class="links">

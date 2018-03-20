@@ -8,6 +8,9 @@ html, body {
     margin: 0;
 }
 
+body{
+    overflow-x: hidden;
+}
 
 a:hover{
     text-decoration: none;
@@ -90,6 +93,9 @@ a:hover{
     color: #fdfdfd;
     font-weight: 300;
     text-transform: uppercase;
+    max-width: 1100px;
+    max-width:75vw;
+    margin:auto;
 }
 
 .taglineholder{
@@ -359,7 +365,7 @@ input[type=checkbox] {
 }
 
 #cta h3{
-    font-size: 70px;
+    font-size: 6vw;
 }
 
 
@@ -448,6 +454,54 @@ html[xmlns] .clearfix {
 }
 
 
+
+#narrowNav{
+    top: 50px;
+    position: fixed;
+    right: 0px;
+    background-color: #83817e;
+    padding: 20px;
+    border-left: 1px solid #e8e8e8;
+    border-bottom:1px solid #e8e8e8;
+}
+
+#narrowNav ul {
+    list-style-type: none;
+    padding-left:0px;
+}
+
+#narrowNav ul li{
+    padding:10px 0px;   
+}
+
+#narrowNav ul li a{
+    padding:10px 0px;
+    color:#e8e8e8;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#content-holder{
+    box-sizing: border-box;
+    padding-top:69px;
+    padding-bottom:69px;
+}
+
+
+.btn-info{
+    background-color: #ff7404;
+    border-color:#ff7404;
+    margin-top:20px;
+}
+.btn-info:hover{
+    background-color:#83817e;
+    border-color:#83817e;
+}
+
+#nbclogoimg{
+    max-width:20vw;
+}
+
 @media only screen and (max-width: 600px){
     .boardcard{
         margin-left:10px;
@@ -460,3 +514,65 @@ html[xmlns] .clearfix {
 }
 
 
+
+
+@media screen and (min-width: 1200px) {
+    .pcdevice{
+        display:block;
+    }
+
+    #narrowNav{
+        display:none;
+    }
+    .mobiledevice{
+        display:none;
+    }
+}
+@media screen and (max-width: 1199px) {
+    .pcdevice{
+        display:none;
+    }
+
+    .mobiledevice{
+        display:none;
+    }
+
+    #expand-nav-button{
+        display:block;
+    }
+
+    .brandingimg{
+        width:200px;
+        max-width:50vw;
+    }
+    #content-holder{
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+
+    #navbar,#footer{
+        height:50px;
+    }
+    .top-right{
+        top:12px;
+    }
+    .bannerimg{
+        max-height:100vw;
+    }
+    .textcontainer{
+        padding:40px 35px;
+    }
+    .tagline{
+        font-size:19px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+
+    .homecard{
+        min-height:40vw;
+    }
+    #nbclogoimg{
+        max-width:70vw;
+    }
+}

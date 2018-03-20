@@ -93,7 +93,7 @@
 
 
 		                    <div class="col-sm-6 homecard">
-		                    	<img class="vertcenteredtext" style="max-width:20vw;" src="{{{url('/img/nbclogo.png')}}}"/>
+		                    	<img class="vertcenteredtext" id="nbclogoimg" src="{{{url('/img/nbclogo.png')}}}"/>
 		                    </div>		                    
 
 

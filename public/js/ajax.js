@@ -49,25 +49,35 @@ function setElementPositions(){
     $('#cta').css('padding-top',($('#homebanner').height()-$('#cta').height()-50));
 
     $('.vertcenteredtext').each(function() {
+        $(this).css('padding-top','0px');
+        $(this).css('padding-bottom','0px');
+    });
 
+    $('.vertcenteredtext').each(function() { 
         size=(($(this).parent().height() - $(this).height())/2);
         $(this).css('padding-top',size);
         $(this).css('padding-bottom',size); 
-
     });                 
+    $('#narrowNav').hide(); //to remove a bug where this menu remains when a screen in enlarged but the menu remains
 }   
 
 
 
 
 function setFooterPosition(){
-    footmargin = $('#footimg').height() - $('#footer').height();
-    $('#footer').css('top',$(document).height()-$('#footer').height()-20 +69 -footmargin);
+    
+    footerpadding = $('#footimg').height() + 50;  //the 50 is to have some breathing space between the end of content and the footer
+    
+    $('#footer').css('top','0px');
+    $('#footer').css('margin-top','0px');
+    
+    $('#footer').css('top',$(document).height()-$('#footer').height() + footerpadding +30);
 
-    $('#footer').css('margin-top',footmargin);
+    //$('#footer').css('margin-top',footmargin);
     $('#footimg').css('right',0);
     $('#footimg').css('bottom',0);                  
 
+    $('#content-holder').css('padding-bottom',footerpadding);
 } 
 
 function parseOptions(options){
@@ -227,6 +237,13 @@ function completeJS(){
         }, 500, 'linear');
     }); 
 
+
+
+
+    $('#expand-nav-button').click(function(e) {
+        e.preventDefault();
+        $('#narrowNav').toggle();
+    });
 
 
 /* =================================================================================================================================*/
