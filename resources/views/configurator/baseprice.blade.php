@@ -18,6 +18,15 @@
         </div>
 
     </div>
+    <a href="#sidebar">
+        <div id="mobilePriceSummary">
+            <div class="tblrow clearfix">
+                <div class="halfcell leftcell"><h4>Price</h4></div>
+                <div class="halfcell rightcell"><h4 id="total-price-display-mobile"></h4></div>
+                <div class="tblrow"><p id="viewSummaryButton">View Summary</p></div>
+            </div>
+        </div>
+    </a>
 
    <div id="extras">
 

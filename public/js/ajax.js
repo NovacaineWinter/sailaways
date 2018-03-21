@@ -65,7 +65,7 @@ function setElementPositions(){
 
 
 function setFooterPosition(){
-    
+    console.log('footer');
     footerpadding = $('#footimg').height() + 50;  //the 50 is to have some breathing space between the end of content and the footer
     
     $('#footer').css('top','0px');
@@ -184,6 +184,7 @@ function completeJS(){
 
     if($('#baseprice').attr('value')){
         $('#base-price-display').html('&pound;'+parseFloat($('#baseprice').attr('value')));
+        $('#total-price-display-mobile').html('&pound;'+parseFloat($('#baseprice').attr('value')));
         $('#total-price-display').html('&pound;'+parseFloat($('#baseprice').attr('value')));
     }else{
         $('#total-price-display').html('&pound;');
@@ -202,6 +203,7 @@ function completeJS(){
         });
         total = extras + parseFloat($('#baseprice').attr('value'));
         $('#total-price-display').html('&pound;'+total);
+        $('#total-price-display-mobile').html('&pound;'+total);
         $('#extra-price-display').html('&pound;'+extras);
         
       
