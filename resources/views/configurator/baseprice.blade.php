@@ -1,7 +1,7 @@
 
 <div class="">
 <img class="configuratorImg" src="{{{ $target->hull_style->img }}}" alt="boat"/>
-<h2>{{{ $target->hull_style->name }}}</h2>
+<h2 class="text-center">{{{ $target->hull_style->name }}}</h2>
 
     <div id="boatsummary">
 
@@ -12,11 +12,16 @@
         </div>
 
         <div class="tblrow clearfix">
-            <div class="halfcell leftcell"><h4>Price</h4></div>
+            <div class="halfcell leftcell"><h4>Liveaboard Price*</h4></div>
             <div class="halfcell rightcell"><h4 id="total-price-display"></h4></div>
-            <div class="tblrow">Ex VAT</div>
+            <div class="tblrow text-center">Ex VAT</div>
         </div>
 
+        <div class="tblrow clearfix">
+            <div class="halfcell leftcell"><h4>Leisure Price</h4></div>
+            <div class="halfcell rightcell"><h4 id="total-price-display-leisure"></h4></div>
+            <div class="tblrow text-center">Inc VAT</div>
+        </div>
     </div>
     <a href="#sidebar">
         <div id="mobilePriceSummary">

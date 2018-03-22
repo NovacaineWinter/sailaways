@@ -66,6 +66,7 @@
     @endforeach
 
 
+<p>*Liveaboard price subject to boat qualifying as a VAT-free vessel. Liveaboard price include a £1500 administration charge levied by the boat manufacturer</p>
         
 
 </div>

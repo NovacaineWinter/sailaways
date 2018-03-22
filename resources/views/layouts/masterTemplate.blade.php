@@ -76,7 +76,7 @@
             <div class="links">
                 <a href="{{{ url('/') }}}">Home</a>
                 <!--<a href="{{{ url('privacy') }}}">Privacy Policy</a>-->
-                <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>
+                <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>                
             </div>
              <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg"  class="brandingimg" alt="logo"/>
         </div>
