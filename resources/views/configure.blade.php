@@ -8,7 +8,7 @@
 
 @section('content')
 <div id="ajax-target">
-    <script>
+   <!-- <script>
         $(document).ready(function() {
 
             $.ajaxSetup({
@@ -35,6 +35,8 @@
             });              
          
         });
-    </script>
+    </script>-->
+
+    @include('configurator.startConfig',['info'=>$info])
 </div>
 @endsection

@@ -25,7 +25,7 @@ Route::get('/optionalextra', 'dashboardController@manageExtra');
 
 Route::get('/extras', 'dashboardController@listOptionalExtras');
 
-
+Route::get('/configure/save','configController@saveMyConfig');
 
 
 Route::get('/adminAjax', 'dashboardController@ajax');

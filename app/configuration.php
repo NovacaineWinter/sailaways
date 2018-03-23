@@ -33,4 +33,17 @@ class configuration extends Model
     public function fitout_level(){
     	return $this->belongsTo('App\fitout_level','fitout_level_id');
     }
+
+
+    public function width(){
+        return $this->belongsTo('App\width','width_id');
+    }
+
+    public function length(){
+        return $this->belongsTo('App\length','length_id');
+    }
+
+    public function userConfigs(){
+        return $this->hasMany('App\userConfig','configuration_id');
+    }
 }

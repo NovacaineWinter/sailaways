@@ -1,3 +1,16 @@
+<div id="blankout"></div>
+<div id="modal">
+    <div class="col-sm-12">
+        <h1>Enter Your Email</h1>
+        <p>We can save your configuration so you can view it later, if you wish to discuss your boat with us, tick the box and we'll be in touch</p>
+        <input type="text" name="name" class="userinput" id="nameInput" placeholder="Your Name"><br>
+        <input type="email" name="email" class="userinput" id="emailAddressField" placeholder="Enter Your Email"><br>
+        <div class="btn btn-info saveMyConfig" contact="0">Just Save My <br>Configuration</div>
+        <div class="btn btn-info saveMyConfig" contact="1">Discuss my design <br>with sailaways.net</div>
+        
+    </div>
+</div>
+
 <div class="content">
 
 
@@ -5,7 +18,8 @@
         
         @if($info['complete'])
     
-            @include('configurator.baseprice', ['target' => $info['target']])                    
+            @include('configurator.baseprice', ['target' => $info['target']['data']])         
+            <input type="hidden" id="hullConfigID" name="hullConfigID" value="{{{ $info['target']['data']->id }}}">           
 
         @else
             <div class="container">

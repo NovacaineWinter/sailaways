@@ -1,5 +1,7 @@
+
+
 <div style="margin-left: -15px;margin-right: 15px; padding-bottom:100px">
-    <input type="hidden" id="baseprice" value="{{{$target->baseprice}}}">
+    <input type="hidden" id="baseprice" value="{{{$target['data']->baseprice}}}">
 
     <?php 
     $n=0; 
@@ -10,11 +12,11 @@
 
     @foreach(\App\option_category::all()->sortBy('position')->pluck('id')->toArray() as $category)
         
-        @if($target->options->where('option_category_id','=',$category)->count()>0)
+        @if($target['data']->options->where('option_category_id','=',$category)->count()>0)
             <h4>{{{\App\option_category::find($category)->name}}}</h4>
         @endif
         
-        @foreach($target->options->where('option_category_id','=',$category) as $option)
+        @foreach($target['data']->options->where('option_category_id','=',$category) as $option)
 
         
 
@@ -33,7 +35,21 @@
                             <td class="config-slider-container">
                                  @if(!$option->is_standard) 
                                 <div class="slideCheckbox rowitem">                                                        
-                                    <input type="checkbox"  title="{{{ $option->title }}}" class="added-option" price="{{{ $option->price_ex_vat }}}" value="None" id="slide{{{$n}}}" name="{{{ /*$option->ref*/ $option->id }}}" />
+                                    <input 
+                                    type="checkbox"  
+                                    title="{{{ $option->title }}}" 
+                                    class="added-option" 
+                                    price="{{{ $option->price_ex_vat }}}" 
+                                    value="{{{ $option->id}}}" 
+                                    id="slide{{{$n}}}" 
+                                    name="{{{ /*$option->ref*/ $option->id }}}" 
+                                    @if($target['hasOptions'])
+                                        @if(in_array($option->id,$target['options']))
+                                            checked
+                                        @endif
+                                    @endif
+
+                                    />
                                     <label for="slide{{{$n}}}" style="padding:0px"></label>                                 
                                 </div>
                                @else

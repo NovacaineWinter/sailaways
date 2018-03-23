@@ -1,4 +1,12 @@
 
+function inArray(needle, haystack) {
+    var length = haystack.length;
+    for(var i = 0; i < length; i++) {
+        if(haystack[i] == needle) return true;
+    }
+    return false;
+}
+
 
 function url(uri){
 
@@ -7,7 +15,18 @@ function url(uri){
     return document.head.querySelector("[property=siteurl]").content+'/'+cleanURI;
 }
 
-
+function getOptionsSelected(){
+     var searchIDs = $('.added-option:checked').map(function(){
+        
+      return $(this).val();
+        
+    });
+     if(searchIDs.get().length >0){
+        return searchIDs.get()
+     }else{
+        return [0];
+     }
+}
 
 
 function compileData(){
@@ -64,6 +83,29 @@ function setElementPositions(){
 
 
 
+function calculatePrice() {
+        extras = 0;
+        opts = [];
+        $('.added-option').each(function() {
+            if($(this).is(':checked')){
+                extras = extras + parseInt(Math.round($(this).attr('price')));
+                opts.push($(this).attr('title'));
+            }                                
+        });
+        total = extras + parseFloat($('#baseprice').attr('value'));
+        totalLiveaboard = Math.round(total + 1500);
+        totalLeisure = Math.round(total * 1.2);
+        $('#total-price-display').html('&pound;'+totalLiveaboard);
+        $('#total-price-display-mobile').html('&pound;'+totalLiveaboard);
+        $('#total-price-display-leisure').html('&pound;'+totalLeisure);
+        $('#extra-price-display').html('&pound;'+extras);     
+      
+        parseOptions(opts);
+     
+}
+
+
+
 function setFooterPosition(){
     footerpadding = $('#footimg').height() + 50;  //the 50 is to have some breathing space between the end of content and the footer
     
@@ -94,6 +136,7 @@ function lazyloadimages(){
     });
 }
 
+var selectedOptions =[];
 
 
 /* =================================================================================================================================*/
@@ -107,7 +150,7 @@ function completeJS(){
     
     lazyloadimages();
     setElementPositions();
-
+    calculatePrice();
     $(window).resize(setElementPositions);
 
 
@@ -155,7 +198,8 @@ function completeJS(){
                     $(this).prop('checked',false);
                 });
             }
-        }
+        }        
+
 
 
         $.ajax({
@@ -163,7 +207,17 @@ function completeJS(){
             method: 'GET',
             data:compileData(),
             success: function(response) {
-                $('#ajax-target').html(response);                                  
+                $('#ajax-target').html(response);   
+
+                $('.added-option').each(function() {
+                    
+                    if(inArray($(this).val(),selectedOptions)){
+                        $(this).prop('checked',true);
+                    }else{
+                        $(this).prop('checked',false);
+                    }                                
+                });
+                calculatePrice();
 
             },
             error: function(response) {
@@ -175,7 +229,45 @@ function completeJS(){
     });
 
 
+    $('#SaveConfig').click(function() {
+        window.scrollTo(0,0);
+        $('#modal').show();
+        $('#blankout').show();
+    });
 
+    $('#blankout').click(function() {
+        $('#modal').hide();
+        $('#blankout').hide();
+    });
+
+
+
+    $('.saveMyConfig').click(function() {
+        console.log('Config: '+$('#hullConfigID').val());
+        console.log('name: '+$('#nameInput').val());
+        console.log('email: '+$('#emailAddressField').val());
+        console.log('options: '+getOptionsSelected());
+        console.log('contact: '+$(this).attr('contact'));
+        $.ajax({
+            url: url('/configure/save'),
+            method: 'GET',
+            data:{
+                config_id:$('#hullConfigID').val(),
+                name: $('#nameInput').val(),
+                email: $('#emailAddressField').val(),
+                options:getOptionsSelected(),
+                contact:$(this).attr('contact'),
+            },
+            success: function(response) {
+                $('#modal').html(response);
+            },
+            error: function(response) {
+                console.log('There was an error - it was:');
+                console.dir(response);
+            }
+        }); 
+
+    });
 
 
 
@@ -184,7 +276,8 @@ function completeJS(){
     if($('#baseprice').attr('value')){
         $('#base-price-display').html('&pound;'+parseFloat($('#baseprice').attr('value')));
         $('#total-price-display-mobile').html('&pound;'+parseFloat($('#baseprice').attr('value')));
-        livaboardPrice = parseInt($('#baseprice').attr('value'))+1500;
+
+        livaboardPrice = Math.round(parseInt($('#baseprice').attr('value'))+1500);
         $('#total-price-display').html('&pound;'+livaboardPrice);
         $('#total-price-display-leisure').html('&pound;'+parseFloat(Math.round($('#baseprice').attr('value')*1.2)));
     }else{
@@ -194,22 +287,8 @@ function completeJS(){
 
 
     $('.added-option').change(function() {
-        extras = 0;
-        opts = [];
-        $('.added-option').each(function() {
-            if($(this).is(':checked')){
-                extras = extras + parseFloat(Math.round($(this).attr('price')));
-                opts.push($(this).attr('title'));
-            }                                
-        });
-        total = extras + parseFloat($('#baseprice').attr('value'));
-        $('#total-price-display').html('&pound;'+total);
-        $('#total-price-display-mobile').html('&pound;'+total);
-        $('#extra-price-display').html('&pound;'+extras);
-        
-      
-            parseOptions(opts);
-     
+        calculatePrice();
+        selectedOptions =getOptionsSelected();
     });
 
 
@@ -221,6 +300,15 @@ function completeJS(){
         
     });
 
+
+    $('#clearOptions').click(function() {
+         $('.added-option').each(function() { 
+            $(this).prop('checked',false);  
+            console.log($(this).prop('checked'));                                        
+        });
+        calculatePrice();
+        selectedOptions =getOptionsSelected();
+    });
 
 
 //function to deal with smoothscroll for #anchors
