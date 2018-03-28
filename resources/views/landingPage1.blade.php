@@ -101,7 +101,7 @@
                                 <h4>Option 2</h4>
                                 <h2>Configure My Perfect Boat</h2>
                                 <img src="{{{url('/img/config.jpg')}}}" alt="configure">
-                                <p>Get exactly what you want from your boat. Choose style, length, width and fitout level. Choose from many optional extras.</p>
+                                <p>Get exactly what you want from your boat. Choose style, length, width and fitout level. Choose from many optional extras and upgrades.</p>
                                 <br>
                                 <a href="{{{ url('configure') }}}" class="btn btn-info btn-lg">Configure My Boat</a>
                             </div>
@@ -140,4 +140,16 @@
 
 
 
+@endsection
+
+@section('cookiebar')
+    <div id="cookiebar">
+        <div id="cookieinfo">
+            <p>
+                This website uses cookies. Find out this affects you <a href="{{{url('/dataprotection')}}}">HERE.</a>
+                <button class="cookiebuttons" id="rejectCookies">Reject</button>
+                <button class="cookiebuttons" id="acceptCookies">Accept Cookies</button>
+            </p>
+        </div>            
+    </div>   
 @endsection

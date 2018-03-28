@@ -41,7 +41,7 @@
     </div>
 
     <div class="col-xs-6 configButtons">
-        <div id="SaveConfig" class="btn btn-info">Save <br> Configuration</div>
+        <div id="SaveConfig" class="btn btn-info">Save <br> My Boat</div>
     </div>    
         
         

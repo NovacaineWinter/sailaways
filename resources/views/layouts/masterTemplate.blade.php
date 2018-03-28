@@ -46,13 +46,16 @@
                 <a href="{{{ url('stock') }}}" class="navborder">Boats in Stock</a>
                 <a href="{{{ url('configure') }}}" class="navborder">Configure My Sailaway</a>
                 <a href="{{{ url('contact') }}}">Contact Us</a>
-                <!--<a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a> -->
+                <!--<a href="" id="cookieExpandArrow">&#8681;</a>-->
             </div>
 
+
+
             <div class="top-right links mobiledevice" id="expand-nav-button">
-                <a href="">Menu</a>
+                <a href="">Menu</a>             
             </div>
+
+
 
             <div class="top-right links mobiledevice" id="narrowNav">
                 <ul>
@@ -61,11 +64,10 @@
                     <li><a href="{{{ url('configure') }}}">Configure My Sailaway</a></li>
                     <li><a href="{{{ url('contact') }}}">Contact Us</a></li>
                 </ul>
-                <!--<a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a> -->
             </div>
 
-        </div>       
+        </div> 
+        @yield('cookiebar')   
 
         <div id="content-holder">
 
@@ -75,7 +77,7 @@
         <div id="footer">
             <div class="links">
                 <a href="{{{ url('/') }}}">Home</a>
-                <!--<a href="{{{ url('privacy') }}}">Privacy Policy</a>-->
+                <a href="{{{ url('/dataprotection') }}}">Data Protection</a>
                 <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>                
             </div>
              <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg"  class="brandingimg" alt="logo"/>

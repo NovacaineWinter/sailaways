@@ -29,6 +29,47 @@ function getOptionsSelected(){
 }
 
 
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+
+function manageCookieBar(){
+    //check if accept cookies cookie isset
+    if (document.cookie.indexOf('acceptCookies=') >= 0){        
+     // have cookie
+        //deal with removing consent
+        $('#cookiebar').hide(200);        
+    } else {
+
+        //if not, check if cookiebar element exists
+        if($('#cookiebar').length){
+            //if so then check if scroll is at pagetop
+            if($(window).scrollTop() == 0){
+                //then slide out the cookieBar
+                $('#cookiebar').show(450);
+            }else{
+                $('#cookiebar').hide(200);
+            }
+        }
+    }
+}
+
+function acceptCookies(){
+    setCookie('acceptCookies', 1, 365)
+    $('#cookiebar').hide(200);
+}
+
+function rejectCookies(){
+    $('#cookiebar').hide(200);
+}
+
 function compileData(){
     delete info;
     info = {} 
@@ -151,6 +192,8 @@ function completeJS(){
     lazyloadimages();
     setElementPositions();
     calculatePrice();
+    manageCookieBar();
+
     $(window).resize(setElementPositions);
 
 
@@ -162,6 +205,12 @@ function completeJS(){
         window.location.href = url('/contact');
     });
 
+    $(window).on('scroll',function() {
+        manageCookieBar();
+    });
+
+    $('#acceptCookies').off().click(acceptCookies);
+    $('#rejectCookies').off().click(rejectCookies);    
 
  
     $('.ajaxradios').change(function() {
