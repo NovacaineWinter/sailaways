@@ -33,6 +33,10 @@ Route::get('/adminAjax', 'dashboardController@ajax');
 Route::post('/adminAjax/imageupload/option', 'dashboardController@imageForOption');
 
 
+Route::get('/dataprotection', function() {
+	return view('dataProtection');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });

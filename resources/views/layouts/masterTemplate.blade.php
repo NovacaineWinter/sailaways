@@ -43,8 +43,8 @@
         <div id="navbar">
             <div class="top-right links pcdevice" id="fullwidth">
                 <a href="{{{ url('/') }}}">Home</a>
-                <a href="{{{ url('stock') }}}">Boats in Stock</a>
-                <a href="{{{ url('configure') }}}">Configure My Sailaway</a>
+                <a href="{{{ url('stock') }}}" class="navborder">Boats in Stock</a>
+                <a href="{{{ url('configure') }}}" class="navborder">Configure My Sailaway</a>
                 <a href="{{{ url('contact') }}}">Contact Us</a>
                 <!--<a href="{{ route('login') }}">Login</a>
                 <a href="{{ route('register') }}">Register</a> -->

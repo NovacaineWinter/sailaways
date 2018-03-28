@@ -11,8 +11,8 @@
                 <div class="bannerimg" id="homebanner">
                 	<a href="#info">
 	                	<div id="cta">
-	                		<h3>Beautiful Sailaways</h3>
-	                		<h4>Find out more</h4>
+	                		<h3>A Sailaway is more than<br>just a boat <br>.<br> It's your home</h3>
+	                		<h4>Discover</h4>
 	                		<h1>v</h1>
 	                	</div>
                 	</a>
@@ -48,7 +48,7 @@
 
 
 	                    </div>
-
+                      
 
                         <div class="taglineholder">
                             <p class="tagline">
@@ -80,7 +80,41 @@
                             <p class="tagline">
                                 Expert advice and a world class location for your project.
                             </p>
-                        </div>                        
+                        </div>    
+
+
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <h1>BUILD MY BOAT</h1>
+                            </div>
+                            <div class="col-sm-6 textcontainer optioncard" style="display:inline-block;">                          
+                               <h4>Option 1</h4>
+                                <h2>View Boats In Stock</h2>
+                                <img src="{{{url('/img/img1.jpg')}}}" alt="stockboats">
+                                <p>These boats are on site and ready to go. Come down and have a look, your new home could be yours sooner than you expected.</p>
+                                <br>
+                                <a href="{{{ url('stock') }}}" class="btn btn-info btn-lg">View Boats In Stock</a>
+                            </div>
+
+
+                            <div class="col-sm-6 textcontainer optioncard">
+                                <h4>Option 2</h4>
+                                <h2>Configure My Perfect Boat</h2>
+                                <img src="{{{url('/img/config.jpg')}}}" alt="configure">
+                                <p>Get exactly what you want from your boat. Choose style, length, width and fitout level. Choose from many optional extras.</p>
+                                <br>
+                                <a href="{{{ url('configure') }}}" class="btn btn-info btn-lg">Configure My Boat</a>
+                            </div>
+
+                        </div>
+
+                        <div class="taglineholder">
+                            <p class="tagline">
+                                &nbsp;
+                            </p>
+                        </div>
+
+
 
 	                    <div class="row">
 
@@ -98,17 +132,7 @@
 
 
 	                    </div>
-                        <div class="row">
-
-                            <div class="col-sm-6">
-                                <a href="{{{ url('stock') }}}" class="btn btn-info btn-lg">View Boats In Stock</a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="{{{ url('configure') }}}" class="btn btn-info btn-lg">Configure My Boat</a>
-                            </div>                            
-                        </div>
-	              
-
+                       
 	            </section>
             </div>
 

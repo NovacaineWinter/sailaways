@@ -390,6 +390,15 @@ input[type=checkbox] {
 }
 
 
+#navbar .navborder{
+    border: 1px solid #ff7404;
+    padding: 10px 25px;
+}
+#navbar .navborder:hover{
+    background-color:#fdfdfd;
+    color:#83817e;
+}
+
 .bannerimg{
     height: 70vh;
     background-position: center;
@@ -404,7 +413,12 @@ input[type=checkbox] {
     background-image: url(/img/map.jpg);
     height:35vh;
 }
-
+#databanner{
+    background-image: url(/img/data.jpg);
+    height:35vh; 
+    color: #fdfdfd;
+    text-shadow: 1px 1px 2px #83817e;
+}
 .boatcard{
     border: 1px solid #a8a8a8;
     padding: 30px;    
@@ -427,7 +441,7 @@ input[type=checkbox] {
 }
 
 #cta h3{
-    font-size: 6vw;
+    font-size: 3.5vw;
 }
 
 
@@ -438,9 +452,15 @@ input[type=checkbox] {
     display: inline-block;
 }
 
-
-
-
+.optioncard{border:1px solid #e8e8e8;}
+.optioncard h2{margin-top:30px;}
+.optioncard img{
+    max-width:17vw;
+}
+.optioncard p{
+    max-width: 17vw;
+    margin: 10px auto;
+}
 
 #configuration-table{
     width:100%;
