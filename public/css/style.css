@@ -637,6 +637,14 @@ html[xmlns] .clearfix {
 
 
 
+@media screen and (max-width: 1550px) {
+    #cookiebar{
+        height:initial;
+    }
+    #cookieinfo{
+        padding-top:0px;
+    }
+}
 
 @media screen and (min-width: 1200px) {
     .pcdevice{
@@ -675,6 +683,17 @@ html[xmlns] .clearfix {
     #navbar,#footer{
         height:50px;
     }
+    
+    #cookiebar{
+        top:50px;        
+    }
+    #cookiebar p{
+        font-size:1.5vw;
+        float:right;
+    }
+    .cookiebuttons{
+        margin:2px;
+    }
     .top-right{
         top:12px;
     }
@@ -697,7 +716,7 @@ html[xmlns] .clearfix {
         height:initial;
         text-align:left;
         padding-top:0px;
-    }
+    }   
     #sidebar .container{
         padding-top:50px;
     }
@@ -733,6 +752,13 @@ html[xmlns] .clearfix {
 }
 
 @media screen and (max-width: 575px) {
+    /* change the settings on the cookie bar as they now become illegible */
+}
+
+
+
+
+@media screen and (max-width: 575px) {
 
     .homecard{
         min-height:40vw;
@@ -748,6 +774,13 @@ html[xmlns] .clearfix {
     #modal{
         height:70vh;
         top:15vh;
+    }
+
+    #cookieinfo{
+        width:50vw;
+    }    
+    #cookiebar p {
+        font-size: 9px;
     }
 }
 
