@@ -303,11 +303,28 @@ function completeJS(){
 
 
     $('.saveMyConfig').click(function() {
+    /*
         console.log('Config: '+$('#hullConfigID').val());
         console.log('name: '+$('#nameInput').val());
         console.log('email: '+$('#emailAddressField').val());
         console.log('options: '+getOptionsSelected());
         console.log('contact: '+$(this).attr('contact'));
+        */
+        if (document.cookie.indexOf('acceptCookies=') >= 0){
+            gacategory = 'Enquiry';
+            gaaction = 'Submit';
+
+            if($(this).attr('contact')==1){
+                galabel='Save & Discuss';            
+            }else{
+                galabel = 'Save Configuration';
+            }
+
+            ga('send', 'event', gacategory, gaaction, galabel);
+        }
+
+
+
         $.ajax({
             url: url('/configure/save'),
             method: 'GET',
