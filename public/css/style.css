@@ -439,6 +439,14 @@ input[type=checkbox] {
     color: #fdfdfd;
     text-shadow: 1px 1px 2px #83817e;
 }
+
+#faqbanner{
+    background-image: url(/img/river.jpg);
+    height:35vh; 
+    color: #fdfdfd;
+    text-shadow: 1px 1px 2px #83817e;
+    background-position-y: 560px;
+}
 .boatcard{
     border: 1px solid #a8a8a8;
     padding: 30px;    
@@ -460,7 +468,7 @@ input[type=checkbox] {
     text-transform: uppercase;
 }
 
-#cta h3{
+#cta h1{
     font-size: 3.5vw;
 }
 
@@ -624,6 +632,33 @@ html[xmlns] .clearfix {
     top: 13px;
 }
 
+
+.questionHeader{
+    border: 1px solid #636b6f;
+    padding: 10px;
+    color: #636b6f;
+    font-size: 19px;
+    text-transform: capitalize;
+}
+
+.questionHeader .col-sm-10{
+    text-align: left;
+}
+
+
+.questionContent{
+    border:1px solid #636b6f;
+    display:none;
+}
+.expandFaq{
+    padding:5px;
+    border:1px solid #636b6f;
+    text-align: center;
+    cursor:pointer;
+}
+.questionContainer{
+    margin: 10px 0px;
+}
 @media only screen and (max-width: 600px){
     .boardcard{
         margin-left:10px;
@@ -784,4 +819,4 @@ html[xmlns] .clearfix {
     }
 }
 
-/* */
+/**/

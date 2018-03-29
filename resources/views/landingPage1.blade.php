@@ -11,7 +11,7 @@
                 <div class="bannerimg" id="homebanner">
                 	<a href="#info">
 	                	<div id="cta">
-	                		<h3>A Sailaway is more than<br>just a boat <br>.<br> It's your home</h3>
+	                		<h1>A Sailaway is more than<br>just a boat <br>.<br> It's your home</h1>
 	                		<h4>Discover</h4>
 	                		<h1>v</h1>
 	                	</div>
@@ -114,6 +114,18 @@
                             </p>
                         </div>
 
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <h1 style="margin:75px 0px">Want To Know More?</h1>
+                                <a href="{{{url('faq')}}}" class="btn btn-info btn-lg" style="margin:50px 0px">View Our FAQs</a>
+                            </div>
+                        </div>
+
+                        <div class="taglineholder">
+                            <p class="tagline">
+                                &nbsp;
+                            </p>
+                        </div>
 
 
 	                    <div class="row">

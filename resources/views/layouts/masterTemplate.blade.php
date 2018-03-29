@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+
+        @if($cookiesOk)
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116600911-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-116600911-1');
+            </script>
+        @endif
+
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta property="siteurl" content="{{{url('/')}}}" />
@@ -10,15 +24,15 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">
-        <!--<link href="{{{url('/css/fonts.css')}}}" rel="stylesheet" type="text/css">-->
+       <!-- <link href="{{{url('/css/fonts.css')}}}" rel="stylesheet" type="text/css">-->
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-       <!-- <script src="{{{url('/js/jquery.min.js')}}}"></script>-->
+        <!--<script src="{{{url('/js/jquery.min.js')}}}"></script>-->
 
         <!-- Bootstrap -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-       <!-- <link href="{{{url('/css/bootstrap.css')}}}" rel="stylesheet" type="text/css">-->
+        <!--<link href="{{{url('/css/bootstrap.css')}}}" rel="stylesheet" type="text/css">-->
         
         <!-- Application styles -->
         <link href="{{{ url('css/style.css') }}}" rel="stylesheet" type="text/css">

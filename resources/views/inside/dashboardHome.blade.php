@@ -2,7 +2,8 @@
 
 @section('content')
 	<div class="container">
-		<a href="{{{ url('baseprice') }}}"><div class="col-sm-6 dashbutton">Edit Base Prices</div></a>
-		<a href="{{{ url('extras') }}}"><div class="col-sm-6 dashbutton">View Optional Extras</div></a>
+		<a href="{{{ url('baseprice') }}}"><div class="col-sm-4 dashbutton">Edit Base Prices</div></a>
+		<a href="{{{ url('extras') }}}"><div class="col-sm-4 dashbutton">View Optional Extras</div></a>
+		<a href="{{{ url('faq-admin') }}}"><div class="col-sm-4 dashbutton">Manage FAQ</div></a>
 	</div>
 @endsection

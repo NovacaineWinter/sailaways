@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{{ url('css/style.css') }}}" rel="stylesheet" type="text/css">
 
     <script src="{{{ url('js/dashboard.js') }}}"></script>
 

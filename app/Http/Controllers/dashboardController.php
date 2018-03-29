@@ -20,6 +20,24 @@ class dashboardController extends Controller
 {
 
 
+    public function faq(Request $request){
+
+        if($request->has('question') && $request->has('answer')){
+            
+            $oldQuestion = \App\faq::where('question','=',$request->get('question'))->where('answer','=',$request->get('answer'))->get();
+
+                if($oldQuestion->count()==0){
+                    $question = new \App\faq;
+                    $question->question= $request->get('question');
+                    $question->answer = $request->get('answer');
+                    $question->save();
+                }
+        }
+
+        $questions = \App\faq::all();
+        return view('inside.faqAdmin')->with('questions',$questions);
+    }
+
     public function listOptionalExtras(Request $request){
         $extras = option::all();
         return view('inside.listOptionalExtras')->with('extras',$extras);

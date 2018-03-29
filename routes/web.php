@@ -12,45 +12,50 @@
 */
 
 
-Route::get('/', 'landingPageController@pageSelector');
-
-
+/* Configurator stuff */
 Route::get('/configure', 'configController@index');
+
 Route::get('/configure/ajax', 'configController@configAjax');
-
-Route::get('/baseprice', 'dashboardController@baseprice');
-
-Route::get('/optionalextra', 'dashboardController@manageExtra');
-
-
-Route::get('/extras', 'dashboardController@listOptionalExtras');
 
 Route::get('/configure/save','configController@saveMyConfig');
 
 
-Route::get('/adminAjax', 'dashboardController@ajax');
-
-Route::post('/adminAjax/imageupload/option', 'dashboardController@imageForOption');
 
 
-Route::get('/dataprotection', function() {
-	return view('dataProtection');
-});
+/* Admin Stuff  */
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+
+Route::get('/baseprice', 'dashboardController@baseprice')->middleware('auth');
+
+Route::get('/optionalextra', 'dashboardController@manageExtra')->middleware('auth');
+
+
+Route::get('/extras', 'dashboardController@listOptionalExtras')->middleware('auth');
+
+
+Route::get('/adminAjax', 'dashboardController@ajax')->middleware('auth');
+
+Route::post('/adminAjax/imageupload/option', 'dashboardController@imageForOption')->middleware('auth');
+
+Route::get('faq-admin','dashboardController@faq')->middleware('auth');
+
+
+/*  Externalstuff  */
+
+
+Route::get('/faq',function() {return view('faq')->with('questions',\App\faq::all());});
+
+Route::get('/dataprotection', function() { return view('dataProtection'); });
+
+Route::get('/contact', function () { return view('contact'); });
+
+
+Route::get('/', 'landingPageController@pageSelector');
 
 
 Route::get('/stock', 'stockBoatController@index');
 Route::get('/stock/detail', 'stockBoatController@detail');
 
-
-/*
-Route::get('stock/detail/{id}', function ($id) {
-    return view('stockDetail')->with('id',$id);
-});
-*/
 
 Auth::routes();
 

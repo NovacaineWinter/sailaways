@@ -63,7 +63,14 @@ function manageCookieBar(){
 
 function acceptCookies(){
     setCookie('acceptCookies', 1, 365)
-    $('#cookiebar').hide(200);
+    //set GA
+
+    //$('head').prepend('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116600911-1"></script><script>window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag("js", new Date()); gtag("config", "UA-116600911-1");</script>');
+    //$('#cookiebar').hide(200);
+
+    //ugly solution as the GA cookies are not set when appended into the head of the document - force page refresh
+
+    window.location.reload()
 }
 
 function rejectCookies(){
@@ -212,6 +219,10 @@ function completeJS(){
     $('#acceptCookies').off().click(acceptCookies);
     $('#rejectCookies').off().click(rejectCookies);    
 
+
+    $('.expandFaq').off().click(function() {
+        $('#'+($(this).attr('target'))).toggle(400);
+    });
  
     $('.ajaxradios').change(function() {
         

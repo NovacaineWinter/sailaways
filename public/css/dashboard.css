@@ -119,3 +119,17 @@
 .optionImageContainer img{
 	max-width:200px;
 }
+
+.adminsection{
+	background-color: #fdfdfd;
+	padding:20px;
+	border-radius:10px;
+	box-sizing: border-box;
+}
+
+.dashboardTextbox{
+	width:80%;
+}
+.paddedrow{
+	margin:10px 0px;
+}
