@@ -23,8 +23,11 @@
                    				<div class="cardtitle">
                    					 <h3>{{{ $boat->title }}}</h3>
                    				</div>
-                   				<div class="cardimage" style="background-image:url('{{{ url($boat->img->first()->src) }}}')">
-                
+                          @if($boat->img->count()>0)
+                   				   <div class="cardimage" style="background-image:url('{{ url(Storage::url($boat->img->first()->src)) }}')">
+                          @else
+                            <div class="cardimage" style="background-image:url('{{ url('/img/defaultBoat.png') }}')">
+                          @endif
                    				</div>
                    				<div class="cardfooter">
                    					<p>{{{ $boat->shortsummary }}}</p>

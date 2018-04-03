@@ -45,6 +45,8 @@ Route::get('/edit-stock-boat','dashboardController@editStockBoat')->middleware('
 
 Route::post('/edit-stock-boat/specsheet','dashboardController@addSpecSheet')->middleware('auth');
 
+Route::post('/edit-stock-boat/photo','dashboardController@addPhoto')->middleware('auth');
+
 
 /*  Externalstuff  */
 

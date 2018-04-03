@@ -92,7 +92,7 @@
 				<div class="col-sm-4 text-right">Spec Sheet</div>
 				<div class="col-sm-4">			
 
-        			<input type="file" accept="image/*;capture=camera" name="specsheet">
+        			<input type="file" name="specsheet">
 				</div>
 				<div class="col-sm-3"><input type="submit" class="pull-right" value="Upload Spec Sheet"></div>
 			</div>
@@ -104,6 +104,33 @@
 		</form>
 
 
+<br><br><br><br>
+
+		<form action="{{{ url('/edit-stock-boat/photo') }}}" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			<input type="hidden" value="{{{ $data['target']->id }}}" name="target">
+
+
+
+			<div class="row paddedrow">
+
+				<div class="col-sm-4 text-right">Images</div>
+				<div class="col-sm-4">			
+
+        			<input type="file" name="photo">
+				</div>
+				<div class="col-sm-3"><input type="submit" class="pull-right" value="Upload Image"></div>
+			</div>
+
+			
+		</form>
+
+<br><br><br><br>
+
+
+	@foreach($data['target']->img as $image)
+		hello
+	@endforeach
 
 	</div>
 </div>

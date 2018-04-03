@@ -81,14 +81,28 @@ class dashboardController extends Controller
             $boat->specsheet = $request->file('specsheet')->store('public');
             $boat->save();
 
-
-            $data['boats'] = \App\stock_boats::all();
-            $data['lengths'] = \App\length::all();
-            $data['widths'] = \App\width::all();
-            $data['hulls'] = \App\hull_style::all();
             return redirect('stock-boat-admin');
         }
     }
+
+
+    
+
+    public function addPhoto(Request $request){
+
+        if($request->hasFile('photo') && $request->has('target')){
+
+            $img = new \App\stockBoatImage;
+            $img->src = $request->file('photo')->store('public');
+            $img->stock_boat_id = $request->get('target');
+            $img->save();
+
+            return redirect('edit-stock-boat?target='.$request->get('target'));
+        }
+    }
+
+
+
 
     public function editStockBoat(Request $request){
 
