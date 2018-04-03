@@ -17,7 +17,7 @@
 
 
                    	<div class="row">
-                   		<div class="col-sm-6 imagetile" target="{{{ $info['boat']->img->first()->src }}}"></div>
+                   		<div class="col-sm-6 imagetile" target="{{ Storage::url($info['boat']->img->first()->src) }}"></div>
                    		<div class="col-sm-6">{{{ $info['boat']->description }}}</div>
                    	</div>
                     <a href="{{ url(Storage::url($info['boat']->specsheet)) }}" class="btn btn-info btn-lg">Download Specsheet</a>
@@ -25,7 +25,7 @@
                    	<div class="row">
                    		@foreach($info['boat']->img as $img)
                    			<div class="col-sm-4" style="padding:15px">
-                   				<div class="imagetile" target="{{{ $img->src }}}"></div>
+                   				<div class="imagetile" target="{{ Storage::url($img->src) }}"></div>
                    			</div>
                    		@endforeach
                    	</div>
