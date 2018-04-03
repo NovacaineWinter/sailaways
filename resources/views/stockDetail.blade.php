@@ -20,7 +20,7 @@
                    		<div class="col-sm-6 imagetile" target="{{{ $info['boat']->img->first()->src }}}"></div>
                    		<div class="col-sm-6">{{{ $info['boat']->description }}}</div>
                    	</div>
-                    <a href="{{{url($info['boat']->specsheet)}}}" class="btn btn-info btn-lg">Download Specsheet</a>
+                    <a href="{{ url(Storage::url($info['boat']->specsheet)) }}" class="btn btn-info btn-lg">Download Specsheet</a>
                    	<h2>Images</h2>
                    	<div class="row">
                    		@foreach($info['boat']->img as $img)

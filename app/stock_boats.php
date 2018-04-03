@@ -11,4 +11,5 @@ class stock_boats extends Model
     public function img(){
     	return $this->hasMany('\App\stockBoatImage','stock_boat_id');
     }
+
 }

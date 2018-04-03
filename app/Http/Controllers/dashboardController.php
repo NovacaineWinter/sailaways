@@ -38,6 +38,131 @@ class dashboardController extends Controller
         return view('inside.faqAdmin')->with('questions',$questions);
     }
 
+
+
+    public function manageStockBoats(Request $request){ 
+        if($request->has('title') && $request->has('shortDescription') && $request->has('fullDescription') && $request->has('price') && $request->has('nonce')){
+            //currently trying to create a new boat as the post/get params are present
+
+            if(\App\stock_boats::where('nonce','=',$request->get('nonce'))->count() == 0){
+                $new = new \App\stock_boats;
+
+                $new->title         = $request->get('title'); 
+                $new->shortSummary  = $request->get('shortDescription'); 
+                $new->description   = $request->get('fullDescription'); 
+                $new->price         = $request->get('price'); 
+
+                $new->hull_style_id = $request->get('hull'); 
+                $new->length_id     = $request->get('length'); 
+                $new->width_id      = $request->get('width'); 
+                $new->nonce         = $request->get('nonce');
+                $new->save();
+            }
+
+        }
+
+            //just trying to see the breakdown of boats in stock
+
+            $data['boats'] = \App\stock_boats::all();
+            $data['lengths'] = \App\length::all();
+            $data['widths'] = \App\width::all();
+            $data['hulls'] = \App\hull_style::all();
+            return view('inside.manageStockBoats')->with('data',$data);
+        
+    }
+
+
+
+    public function addSpecSheet(Request $request){
+
+        if($request->hasFile('specsheet') && $request->has('target')){
+
+            $boat = \App\stock_boats::find($request->get('target'));
+            $boat->specsheet = $request->file('specsheet')->store('public');
+            $boat->save();
+
+
+            $data['boats'] = \App\stock_boats::all();
+            $data['lengths'] = \App\length::all();
+            $data['widths'] = \App\width::all();
+            $data['hulls'] = \App\hull_style::all();
+            return redirect('inside.manageStockBoats')->with('data',$data);
+        }
+    }
+
+    public function editStockBoat(Request $request){
+
+
+        if($request->has('title') && $request->has('shortDescription') && $request->has('fullDescription') && $request->has('price') && $request->has('target')){
+            //update old boat
+
+            $toEdit = \App\stock_boats::find($request->get('target'));
+
+
+
+            if($request->hasFile('specsheet')){
+                $toEdit->specsheet = $request->file('specsheet')->store('public');
+            }
+
+            if($toEdit){
+
+                $toEdit->title         = $request->get('title'); 
+                $toEdit->shortSummary  = $request->get('shortDescription'); 
+                $toEdit->description   = $request->get('fullDescription'); 
+                $toEdit->price         = $request->get('price'); 
+
+                $toEdit->hull_style_id = $request->get('hull'); 
+                $toEdit->length_id     = $request->get('length'); 
+                $toEdit->width_id      = $request->get('width'); 
+                $toEdit->save();
+            }
+        
+            $data['boats'] = \App\stock_boats::all();
+            $data['lengths'] = \App\length::all();
+            $data['widths'] = \App\width::all();
+            $data['hulls'] = \App\hull_style::all();
+            return view('inside.manageStockBoats')->with('data',$data);
+     
+
+
+        }elseif($request->has('target')){
+
+            $boat = \App\stock_boats::where('id','=',$request->get('target'))->first();
+
+            if($boat){
+                $data['lengths'] = \App\length::all();
+                $data['widths'] = \App\width::all();
+                $data['hulls'] = \App\hull_style::all();
+                $data['target']= $boat;
+                return view('inside.stockBoatDetail')->with('data',$data);
+
+            }else{
+                //just return the summary view as the target was not passed correctly
+
+                $data['boats'] = \App\stock_boats::all();
+                $data['lengths'] = \App\length::all();
+                $data['widths'] = \App\width::all();
+                $data['hulls'] = \App\hull_style::all();
+                return view('inside.manageStockBoats')->with('data',$data);
+            }
+
+
+
+
+
+
+
+        }else{
+            //just return the summary view as the target was not passed correctly
+
+            $data['boats'] = \App\stock_boats::all();
+            $data['lengths'] = \App\length::all();
+            $data['widths'] = \App\width::all();
+            $data['hulls'] = \App\hull_style::all();
+            return view('inside.manageStockBoats')->with('data',$data);  
+        }
+    }
+
     public function listOptionalExtras(Request $request){
         $extras = option::all();
         return view('inside.listOptionalExtras')->with('extras',$extras);

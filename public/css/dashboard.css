@@ -133,3 +133,13 @@
 .paddedrow{
 	margin:10px 0px;
 }
+
+
+.adminsection select{
+	padding:10px;
+	font-size: 22px;
+}
+
+.img50pix img{
+	max-width:50px;
+}

@@ -17,4 +17,5 @@ class stockBoatController extends Controller
     	$info['boat'] = \App\stock_boats::find($request->get('target'));
     	return view('stockDetail')->with('info',$info);
     }
+
 }
