@@ -86,7 +86,7 @@ class dashboardController extends Controller
             $data['lengths'] = \App\length::all();
             $data['widths'] = \App\width::all();
             $data['hulls'] = \App\hull_style::all();
-            return redirect('inside.manageStockBoats')->with('data',$data);
+            return redirect('stock-boat-admin');
         }
     }
 
