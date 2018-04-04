@@ -356,6 +356,25 @@ class dashboardController extends Controller
                     break;
 
 
+                case 'updatePrimaryImage':
+                    if($request->has('targetBoat') && $request->has('targetImage')){
+                        $boat = \App\stock_boats::find($request->get('targetBoat'));
+                        $boat->setPrimaryImage($request->get('targetImage'));
+                    }
+                    return 'true';
+                    break;
+
+
+                case 'deleteImage':
+                    if($request->has('targetBoat') && $request->has('targetImage')){
+                        $boat = \App\stock_boats::find($request->get('targetBoat'));
+                        $boat->deleteImage($request->get('targetImage'));
+                    }
+                    return 'true';
+                    break;
+
+
+
                 case 'newImageForOption':
                     return 'ok';
                     break;

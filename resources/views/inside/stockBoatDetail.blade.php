@@ -128,8 +128,24 @@
 <br><br><br><br>
 
 
-	@foreach($data['target']->img as $image)
-		hello
+	@foreach($data['target']->img->sortByDesc('primary') as $image)
+		<div class="row paddedrow questionContainer questionHeader">
+			<div class="col-sm-4 col-offset-sm-2 imageselector" style="background-image:url({{ url(Storage::url($image->src)) }});">
+				
+			</div>
+			@if(!$image->primary)
+				<div class="col-sm-3 vertcenteredtext" style="text-align: center;">
+					<div class="btn btn-lg btn-red imageButton" method="deleteImage" image="{{{ $image->id }}}" boat="{{{ $data['target']->id }}}">Delete</div>
+				</div>
+				<div class="col-sm-3 vertcenteredtext" style="text-align: center;">
+					<div class="btn btn-lg btn-info imageButton" method="updatePrimaryImage" image="{{{ $image->id }}}" boat="{{{ $data['target']->id }}}">Set As Primary</div>
+				</div>
+			@else
+				<div class="col-sm-6 vertcenteredtext" style="text-align: center;">
+					Primary Image
+				</div>
+			@endif
+		</div>
 	@endforeach
 
 	</div>

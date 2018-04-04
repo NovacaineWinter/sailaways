@@ -24,7 +24,7 @@
                    					 <h3>{{{ $boat->title }}}</h3>
                    				</div>
                           @if($boat->img->count()>0)
-                   				   <div class="cardimage" style="background-image:url('{{ url(Storage::url($boat->img->first()->src)) }}')">
+                   				   <div class="cardimage" style="background-image:url('{{ url(Storage::url($boat->img->sortByDesc('primary')->first()->src)) }}')">
                           @else
                             <div class="cardimage" style="background-image:url('{{ url('/img/defaultBoat.png') }}')">
                           @endif

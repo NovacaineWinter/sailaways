@@ -143,3 +143,15 @@
 .img50pix img{
 	max-width:50px;
 }
+
+.imageselector{
+	min-height:270px;
+	background-size: cover;
+	background-position: center;
+}
+
+.btn-red{
+	background-color: red;
+	color:white;
+	margin-top:20px;
+}

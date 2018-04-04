@@ -12,22 +12,37 @@
             <div class="content">
                 <div class="container">
                   	<div class="title m-b-md">
-                        Boat {{{$info['boat']->id}}}
+                        {{{$info['boat']->title}}}
                    	</div>
 
 
                    	<div class="row">
-                   		<div class="col-sm-6 imagetile" target="{{ Storage::url($info['boat']->img->first()->src) }}"></div>
+
+                      @if($info['boat']->img->count()>0)
+                         <div class="col-sm-6 imagetile" target="{{ Storage::url($info['boat']->img->sortByDesc('primary')->first()->src) }}"></div>
+                      @else
+                        <div class="col-sm-6 imagetile" target="{{ url('/img/defaultBoat.png') }}"></div>
+                      @endif
+
+                   		
+
+
                    		<div class="col-sm-6">{{{ $info['boat']->description }}}</div>
                    	</div>
                     <a href="{{ url(Storage::url($info['boat']->specsheet)) }}" class="btn btn-info btn-lg">Download Specsheet</a>
                    	<h2>Images</h2>
                    	<div class="row">
-                   		@foreach($info['boat']->img as $img)
-                   			<div class="col-sm-4" style="padding:15px">
-                   				<div class="imagetile" target="{{ Storage::url($img->src) }}"></div>
-                   			</div>
-                   		@endforeach
+
+                      @if($info['boat']->img->where('primary','=',false)->count()>0)
+
+                     		@foreach($info['boat']->img->where('primary','=',false) as $img)
+                     			<div class="col-sm-4" style="padding:15px">
+                     				<div class="imagetile" target="{{ Storage::url($img->src) }}"></div>
+                     			</div>
+                     		@endforeach
+
+                      @endif
+
                    	</div>
                 </div>
             </div>

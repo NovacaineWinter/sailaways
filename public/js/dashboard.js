@@ -12,6 +12,7 @@ function url(uri){
 
 function doStuff(){
 
+	setElementPositions();
 
 	$('#fileToUpload').change(function() {
 		$('#uploadbutton').show(500); 
@@ -126,6 +127,7 @@ function doStuff(){
         });
 	});
 
+
 	$('.dash-clickable').click(function() {
 		target = $(this).attr('target');
 		method = $(this).attr('method');
@@ -155,7 +157,29 @@ function doStuff(){
         });
 	});
 
+	$('.imageButton').click(function() {
+		targetBoat = $(this).attr('boat');
+		targetImage = $(this).attr('image');
+		ajaxmethod	= $(this).attr('method');
+		$.ajax({
+            url: url('/adminAjax'),
+            method: 'GET',
+            data: {
+                ajaxmethod: ajaxmethod,
+                targetBoat:   targetBoat,
+                targetImage:      targetImage,
 
+            },
+            success: function(response) {
+            	window.location.reload();
+            },
+            
+            error: function(response) {
+                console.log('There was an error - it was:');
+                console.dir(response);
+            }
+        });
+	});
 
 
 
@@ -205,7 +229,28 @@ function doStuff(){
 		$(this).val($(this).attr('old'));
 	});
 
+
+
+
 }
+
+
+
+function setElementPositions(){
+    
+
+    $('.vertcenteredtext').each(function() {
+        $(this).css('padding-top','0px');
+        $(this).css('padding-bottom','0px');
+    });
+
+    $('.vertcenteredtext').each(function() { 
+        size=(($(this).parent().height() - $(this).height())/2);
+        $(this).css('padding-top',size);
+        $(this).css('padding-bottom',size); 
+    });                 
+}  
+
 
 
 $(document).ready(doStuff);
