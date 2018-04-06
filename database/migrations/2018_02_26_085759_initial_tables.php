@@ -50,7 +50,7 @@ class InitialTables extends Migration
             $b->increments('id');
             $b->string('name');
             $b->string('title'); 
-            $b->string('description');
+            $b->string('description',5000);
             $b->decimal('price_ex_vat');
             $b->string('img')->nullable();    
             $b->boolean('highlighted');
