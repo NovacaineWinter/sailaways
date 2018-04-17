@@ -462,8 +462,6 @@ input[type=checkbox] {
     background-size: cover;
 }
 
-
-
 .centerBottomButton{
     position: absolute;
     bottom:25px;
@@ -671,6 +669,22 @@ html[xmlns] .clearfix {
 .questionContainer{
     margin: 10px 0px;
 }
+
+
+.soldBanner{
+    position: absolute;
+    top: 33%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 100px;
+    color: red;
+    font-weight: 900;
+    text-shadow: 1px 2px 2px #353535;
+    transform: rotate(15deg);
+}
+
+
 @media only screen and (max-width: 600px){
     .boardcard{
         margin-left:10px;
