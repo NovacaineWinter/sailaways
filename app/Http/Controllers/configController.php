@@ -124,6 +124,8 @@ class configController extends Controller
 				$return = $userConfig->code;
 			}
 
+			$this->generateEmailFromEnquiry($userConfig);
+
 			return view('confirmSaveConfig')->with('code',$return);
 		}else{
 			return "Oops we didn't receive all the necessary information, please try again";
@@ -210,4 +212,50 @@ class configController extends Controller
 
 		return view('configurator.startConfig')->with('info',$info);
 	}
+
+
+	private function generateEmailFromEnquiry($savedConfig){
+		//this function is to generate the required alerts and actions when a user saves a configuration
+
+		$headers = array(
+		  'From: "Sailaways.net" <info@sailaways.net>' ,
+		  'Reply-To: "Sailaways.net" <info@sailaways.net>' ,
+		  'X-Mailer: PHP/' . phpversion() ,
+		  'MIME-Version: 1.0' ,
+		  'Content-type: text/html; charset=iso-8859-1'
+		);
+
+		$headers = implode( "\r\n" , $headers );
+
+		//alert the admin staff at NBC
+
+		$adminEmail = 'info@nottinghamboatco.com';
+		$adminEmailSecond = 'info@sailaways.net';
+		$adminSubject = 'New enquiry from Sailaways.net';
+		
+
+		$adminView = View::make('email.customerEnquiryAdminEmail',['config'=>$savedConfig]);
+		$adminMessage = $adminView->render();
+
+		mail($adminEmail,$adminSubject,$adminMessage,$headers);
+		//mail($adminEmailSecond,$adminSubject,$adminMessage,$headers);
+
+		//send the email with config link to the customer
+		
+		$userEmail = $savedConfig->email;
+		$userSubject = 'Your saved boat configuration';
+
+		if($savedConfig->can_contact){
+			$customerView = View::make('email.customerEnquiryCustomerEmailCanContact',['config'=>$savedConfig]);
+			$userMessage = $customerView->render();
+		}else{
+			$customerView = View::make('email.customerEnquiryCustomerEmailNoContact',['config'=>$savedConfig]);
+			$userMessage = $customerView->render();
+		}
+
+		mail($userEmail,$userSubject,$userMessage,$headers);
+
+	}
+
+
 }
