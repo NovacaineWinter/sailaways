@@ -234,7 +234,7 @@ class configController extends Controller
 		$adminSubject = 'New enquiry from Sailaways.net';
 		
 
-		$adminView = View::make('email.customerEnquiryAdminEmail',['config'=>$savedConfig]);
+		$adminView = \View::make('email.customerEnquiryAdminEmail',['config'=>$savedConfig]);
 		$adminMessage = $adminView->render();
 
 		mail($adminEmail,$adminSubject,$adminMessage,$headers);
@@ -246,10 +246,10 @@ class configController extends Controller
 		$userSubject = 'Your saved boat configuration';
 
 		if($savedConfig->can_contact){
-			$customerView = View::make('email.customerEnquiryCustomerEmailCanContact',['config'=>$savedConfig]);
+			$customerView = \View::make('email.customerEnquiryCustomerEmailCanContact',['config'=>$savedConfig]);
 			$userMessage = $customerView->render();
 		}else{
-			$customerView = View::make('email.customerEnquiryCustomerEmailNoContact',['config'=>$savedConfig]);
+			$customerView = \View::make('email.customerEnquiryCustomerEmailNoContact',['config'=>$savedConfig]);
 			$userMessage = $customerView->render();
 		}
 
