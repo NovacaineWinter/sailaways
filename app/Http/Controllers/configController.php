@@ -104,6 +104,7 @@ class configController extends Controller
 							$c->save();
 						}
 				$return = $oldConfig->first()->code;
+				$userConfig= $oldConfig;
 			}else{
 				$userConfig = new \App\userConfig;
 				$userConfig->name = $request->get('name');
@@ -114,7 +115,6 @@ class configController extends Controller
 				$userConfig->save();
 				$userConfig->code = $userConfig->id + 605;
 				$userConfig->save();
-
 				foreach($request->get('options') as $option){
 					$c = new \App\userConfigOptions;
 					$c->user_config_id = $userConfig->id;
