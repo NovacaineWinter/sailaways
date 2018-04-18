@@ -104,7 +104,7 @@ class configController extends Controller
 							$c->save();
 						}
 				$return = $oldConfig->first()->code;
-				$userConfig= $oldConfig;
+				$userConfig= $oldConfig->first();
 			}else{
 				$userConfig = new \App\userConfig;
 				$userConfig->name = $request->get('name');

@@ -3,7 +3,7 @@ A customer has saved a configuration on Sailaways.net,
 their details are as follows;
 <br><br>
 Name:  {{{$config->name}}} <br>
-Email:  {{{$config->name}}} <br>
+Email:  {{{$config->email}}} <br>
 Requested Consulatation: @if($config->can_contact) Yes @else No @endif<br>
 <br>
 
