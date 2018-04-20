@@ -155,3 +155,8 @@
 	color:white;
 	margin-top:20px;
 }
+
+.dashboardtable td,.dashboardtable th{
+    padding: 3px 10px;
+    border: 1px solid #636b6f;
+}

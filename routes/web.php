@@ -39,6 +39,8 @@ Route::post('/adminAjax/imageupload/option', 'dashboardController@imageForOption
 
 Route::get('faq-admin','dashboardController@faq')->middleware('auth');
 
+Route::get('enquiries','dashboardController@enquiries')->middleware('auth');
+
 Route::get('/stock-boat-admin','dashboardController@manageStockBoats')->middleware('auth');
 
 Route::get('/edit-stock-boat','dashboardController@editStockBoat')->middleware('auth');

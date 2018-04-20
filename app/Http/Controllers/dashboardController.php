@@ -39,6 +39,13 @@ class dashboardController extends Controller
     }
 
 
+    public function enquiries(Request $request){
+        $info['request']=$request;
+        $info['enquiries'] = \App\userConfig::all();
+        return view('inside.enquiries')->with('info',$info);
+    }
+
+
 
     public function manageStockBoats(Request $request){ 
         if($request->has('title') && $request->has('shortDescription') && $request->has('fullDescription') && $request->has('price') && $request->has('nonce')){
