@@ -232,6 +232,43 @@ function doStuff(){
 
 
 
+	$('.discussionStartedCheckbox').change(function() {
+		
+		target = $(this).attr('target');
+
+		if($(this).prop('checked')){
+			value=1;
+		}else{
+			value=0;
+		}
+			
+		$.ajax({
+            url: url('/adminAjax'),
+            method: 'GET',
+            data: {
+                ajaxmethod: 'setDiscussionStarted',
+                target:   	target,
+                value:      value,
+
+            },
+            success: function(response) {
+            	if(response){
+	            	window.location.reload();
+	            }else{
+	            	alert('there was a problem, please refresh the page and try again');
+	            }
+            },
+            
+            error: function(response) {
+                console.log('There was an error - it was:');
+                console.dir(response);
+            }
+        });		
+	});
+
+
+
+
 }
 
 

@@ -380,7 +380,16 @@ class dashboardController extends Controller
                     return 'true';
                     break;
 
-
+                case 'setDiscussionStarted':
+                    if($request->has('target')){
+                        $edit = \App\userConfig::find($request->get('target'));
+                        $edit->started_discussion = $request->get('value');
+                        $edit->save();
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                    break;
 
                 case 'newImageForOption':
                     return 'ok';

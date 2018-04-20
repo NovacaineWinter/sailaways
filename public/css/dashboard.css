@@ -160,3 +160,18 @@
     padding: 3px 10px;
     border: 1px solid #636b6f;
 }
+
+.orange{
+	background-color:orange;
+	color:black;
+}
+
+.green{
+	background-color:green;
+	color:black;
+}
+
+
+input[type=checkbox] {
+    visibility: visible;
+}
