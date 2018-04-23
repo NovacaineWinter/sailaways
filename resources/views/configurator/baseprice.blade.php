@@ -11,12 +11,13 @@
 
             <div class="halfcell rightcell" id="base-price-display"></div>
         </div>
-
-        <div class="tblrow clearfix">
-            <div class="halfcell leftcell"><h4>Liveaboard Price*</h4></div>
-            <div class="halfcell rightcell"><h4 id="total-price-display"></h4></div>
-            <div class="tblrow text-center"><h4>Ex VAT</h4></div>
-        </div>
+        @if($target->qualifyingShip)
+            <div class="tblrow clearfix">
+                <div class="halfcell leftcell"><h4>Liveaboard Price*</h4></div>
+                <div class="halfcell rightcell"><h4 id="total-price-display"></h4></div>
+                <div class="tblrow text-center"><h4>Ex VAT</h4></div>
+            </div>
+        @endif
 
         <div class="tblrow clearfix">
             <div class="halfcell leftcell"><h4>Leisure Price</h4></div>
