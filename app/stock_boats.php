@@ -16,9 +16,6 @@ class stock_boats extends Model
         return $this->belongsTo('App\configuration','configuration_id');
     }
 
-
-
-
     public function img(){
     	return $this->hasMany('\App\stockBoatImage','stock_boat_id');
     }

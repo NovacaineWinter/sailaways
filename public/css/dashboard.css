@@ -144,6 +144,10 @@
 	max-width:50px;
 }
 
+.img150pix img{
+	max-width:150px;
+}
+
 .imageselector{
 	min-height:270px;
 	background-size: cover;

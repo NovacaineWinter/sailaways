@@ -6,10 +6,15 @@
 	<div class="col-sm-12 adminsection">
  		@foreach($data['boats'] as $boat)
 			<div class="row paddedrow questionContainer questionHeader">
-				<div class="col-sm-2 img50pix">@if($boat->img->count() > 0) ${{{$boat->img->first()->url}}} @endif</div>
+		 			@if($boat->img->count()>0)
+		 				<div class="col-sm-2 img150pix"><img src="{{ url(Storage::url($boat->img->sortByDesc('primary')->first()->src)) }}"></div>
+                  	@else
+                  		<div class="col-sm-2 img150pix"><img src="{{ url('/img/defaultBoat.png') }}"></div>
+                  	@endif    
+				
 				<div class="col-sm-2 text-right">{{{$boat->title}}}</div>
 				<div class="col-sm-4">{{{$boat->shortsummary}}}</div>
-				<div class="col-sm-2">&pound;{{{$boat->price}}}</div>
+				<div class="col-sm-2">&pound;{{{ number_format($boat->price)}}}</div>
 				<div class="col-sm-2"><a class="btn btn-info btn-lg" href="{{{ url('edit-stock-boat?target='.$boat->id) }}}">Edit</a></div>
 			</div>	
  		@endforeach
@@ -28,7 +33,7 @@
 			</div>		
 
 			<div class="row paddedrow">
-				<div class="col-sm-4 text-right">Price<br><p>N.B This should be Ex VAT</p></div>
+				<div class="col-sm-4 text-right">Price<br><p>N.B This should be Ex VAT  -  Excluding Admin Fee</p></div>
 				<div class="col-sm-8">
 					<input type="number" class="form-control" name="price" placeholder="Price">	
 				</div>			
