@@ -58,12 +58,18 @@ class dashboardController extends Controller
                 $new->shortSummary  = $request->get('shortDescription'); 
                 $new->description   = $request->get('fullDescription'); 
                 $new->price         = $request->get('price'); 
-
-                $new->hull_style_id = $request->get('hull'); 
-                $new->length_id     = $request->get('length'); 
-                $new->width_id      = $request->get('width'); 
                 $new->nonce         = $request->get('nonce');
-                $new->save();
+
+                $config = \App\configuration::where('hull_style_id','=',$request->get('hull'))
+                                            ->where('fitout_level_id','=',2)
+                                            ->where('length_id','=',$request->get('length'))
+                                            ->where('width_id','=',$request->get('width'))
+                                            ->get();
+                if($config->count() > 0){
+
+                    $new->configuration_id = $config->first()->id;                    
+                    $new->save();
+                }
             }
 
         }

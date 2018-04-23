@@ -10,6 +10,14 @@ class stock_boats extends Model
     protected $table ='stockBoats';
 
 
+ 
+
+    public function configuration(){
+        return $this->belongsTo('App\configuration','configuration_id');
+    }
+
+
+
 
     public function img(){
     	return $this->hasMany('\App\stockBoatImage','stock_boat_id');
