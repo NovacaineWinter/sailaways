@@ -44,7 +44,7 @@
 				<div class="col-sm-8">
 					<select name="hull">
 						@foreach($data['hulls'] as $hull)
-							<option value="{{{ $hull->id }}}" @if($hull->id == $data['target']->hull_style_id) selected @endif>{{{$hull->name}}}</option>
+							<option value="{{{ $hull->id }}}" @if($hull->id == $data['target']->configuration->hull_style->id) selected @endif>{{{$hull->name}}}</option>
 						@endforeach
 					</select>
 				</div>
@@ -55,7 +55,7 @@
 				<div class="col-sm-8">
 					<select name="width">
 						@foreach($data['widths'] as $width)
-							<option value="{{{ $width->id }}}" @if($width->id == $data['target']->width_id) selected @endif>{{{$width->ft}}}</option>
+							<option value="{{{ $width->id }}}" @if($width->id == $data['target']->configuration->width->id) selected @endif>{{{$width->ft}}}</option>
 						@endforeach
 					</select>ft
 				</div>
@@ -66,7 +66,7 @@
 				<div class="col-sm-8">
 					<select name="length">
 						@foreach($data['lengths'] as $length)
-							<option value="{{{ $length->id }}}" @if($length->id == $data['target']->length_id) selected @endif>{{{$length->ft}}}</option>
+							<option value="{{{ $length->id }}}" @if($length->id == $data['target']->configuration->length->id) selected @endif>{{{$length->ft}}}</option>
 						@endforeach
 					</select>ft
 				</div>
