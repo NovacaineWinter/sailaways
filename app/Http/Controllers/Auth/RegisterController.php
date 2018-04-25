@@ -36,7 +36,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        /* Remove the ability to register */
+        //$this->middleware('guest');  
+        \Redirect::to('/')->send();
     }
 
     /**
