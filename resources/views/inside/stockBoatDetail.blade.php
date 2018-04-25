@@ -17,7 +17,7 @@
 			</div>		
 
 			<div class="row paddedrow">
-				<div class="col-sm-4 text-right">Price<br><p>N.B This should be Ex VAT</p></div>
+				<div class="col-sm-4 text-right">Price<br><p>N.B This should be Ex VAT <strong> Excluding admin fee</strong></p></div>
 				<div class="col-sm-8">
 					<input type="number" class="form-control" name="price" value="{{{$data['target']->price}}}">	
 				</div>			
