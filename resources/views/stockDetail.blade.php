@@ -44,10 +44,13 @@
                             <tr>
                               <td>{{{ $info['boat']->configuration->length->ft }}}ft</td>
                               <td>{{{ $info['boat']->configuration->width->ft }}}ft</td>
-                              <td>&pound;{{{ number_format($info['boat']->price * 1.2) }}}</td>
+                              <td>See Spec Sheet</td>
+
+                              <?php /*<td>&pound;{{{ number_format($info['boat']->price * 1.2) }}}</td> */?>
                               @if($info['boat']->configuration->qualifyingShip)
-                                <td>&pound;{{{ number_format($info['boat']->price + 1500,0) }}}</td>
-                              @endif                              
+                                <td>See Spec Sheet</td>
+                                <?php /*<td>&pound;{{{ number_format($info['boat']->price + 1500,0) }}}</td>*/?>
+                              @endif                            
                             </tr>
                           </tbody>
                         </table>
