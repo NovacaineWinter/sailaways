@@ -120,7 +120,15 @@ class dashboardController extends Controller
     public function editStockBoat(Request $request){
 
 
-        if($request->has('title') && $request->has('shortDescription') && $request->has('fullDescription') && $request->has('price') && $request->has('target')){
+        if($request->has('title') && 
+            $request->has('shortDescription') && 
+            $request->has('fullDescription') && 
+            $request->has('price') && 
+            $request->has('target') &&
+            $request->has('hull') &&
+            $request->has('hull') &&
+            $request->has('length')
+            ){
             //update old boat
 
             $toEdit = \App\stock_boats::find($request->get('target'));
@@ -137,11 +145,18 @@ class dashboardController extends Controller
                 $toEdit->shortSummary  = $request->get('shortDescription'); 
                 $toEdit->description   = $request->get('fullDescription'); 
                 $toEdit->price         = $request->get('price'); 
+                
 
-                $toEdit->hull_style_id = $request->get('hull'); 
-                $toEdit->length_id     = $request->get('length'); 
-                $toEdit->width_id      = $request->get('width'); 
-                $toEdit->save();
+                $config = \App\configuration::where('hull_style_id','=',$request->get('hull'))
+                                            ->where('fitout_level_id','=',2)
+                                            ->where('length_id','=',$request->get('length'))
+                                            ->where('width_id','=',$request->get('width'))
+                                            ->get();
+                if($config->count() > 0){
+
+                    $toEdit->configuration_id = $config->first()->id;                    
+                    $toEdit->save();
+                }
             }
         
             $data['boats'] = \App\stock_boats::all();
