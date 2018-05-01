@@ -469,6 +469,8 @@ input[type=checkbox] {
     right:0;
     margin:auto;
     width:fit-content;
+    width: -webkit-fit-content;
+
 }
 
 
@@ -660,6 +662,8 @@ html[xmlns] .clearfix {
     border:1px solid #636b6f;
     display:none;
 }
+
+
 .expandFaq{
     padding:5px;
     border:1px solid #636b6f;
@@ -777,6 +781,7 @@ html[xmlns] .clearfix {
         height:initial;
         text-align:left;
         padding-top:0px;
+        z-index:10;
     }   
     #sidebar .container{
         padding-top:50px;

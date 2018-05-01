@@ -221,6 +221,9 @@ function completeJS(){
 
 
     $('.expandFaq').off().click(function() {
+        $('.questionContent').each(function() {
+            $(this).hide();
+        });
         $('#'+($(this).attr('target'))).toggle(400);
     });
  

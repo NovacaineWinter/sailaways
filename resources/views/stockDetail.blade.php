@@ -24,7 +24,7 @@
                         <div class="col-sm-6 imagetile" target="{{ url('/img/defaultBoat.png') }}"></div>
                       @endif    
 
-                      <div class="col-sm-6">{{{ $info['boat']->description }}}</div>
+                      <div class="col-sm-6"><p class="vertcenteredtext">{{{ $info['boat']->description }}}</p></div>
 
                    	</div>
 
@@ -57,7 +57,7 @@
 
 
                     <a href="{{ url(Storage::url($info['boat']->specsheet)) }}" class="btn btn-info btn-lg">Download Specsheet</a>
-                   	<h2>Images</h2>
+                   	<h2>&nbsp;</h2>
                    	<div class="row">
 
                       @if($info['boat']->img->where('primary','=',false)->count()>0)
