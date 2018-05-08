@@ -1,4 +1,3 @@
-
 function inArray(needle, haystack) {
     var length = haystack.length;
     for(var i = 0; i < length; i++) {
@@ -132,6 +131,7 @@ function setElementPositions(){
 
 
 function calculatePrice() {
+
         extras = 0;
         opts = [];
         $('.added-option').each(function() {
@@ -200,7 +200,7 @@ function completeJS(){
     setElementPositions();
     calculatePrice();
     manageCookieBar();
-
+    
     $(window).resize(setElementPositions);
 
 
@@ -416,6 +416,8 @@ function completeJS(){
         $('#narrowNav').toggle();
     });
 
+
+    calculatePrice();
 
 /* =================================================================================================================================*/
 /* ====================================       End of CompleteJS()     ==============================================================*/

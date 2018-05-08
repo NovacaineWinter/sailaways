@@ -1,5 +1,5 @@
 
-@extends('layouts.masterTemplate')
+@extends('layouts.masterTemplate',['suppressFooter'=>1])
 
 @section('title')
     SAILAWAYS.NET
@@ -7,36 +7,9 @@
 
 
 @section('content')
-<div id="ajax-target">
-   <!-- <script>
-        $(document).ready(function() {
+    <div id="ajax-target">
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': '{{csrf_token() }}'
-                }
-            });
+        @include('configurator.startConfig',['info'=>$info])
 
-
-            $.ajax({
-                url: "{{url('/configure/ajax')}}",
-                method: 'GET',
-                data: {
-                    ajaxmethod: 'getHomepage',  
-                },
-                success: function(response) {
-                    $('#ajax-target').html(response);                                  
-
-                },
-                error: function(response) {
-                    console.log('There was an error - it was:');
-                    console.dir(response);
-                }
-            });              
-         
-        });
-    </script>-->
-
-    @include('configurator.startConfig',['info'=>$info])
-</div>
+    </div>
 @endsection

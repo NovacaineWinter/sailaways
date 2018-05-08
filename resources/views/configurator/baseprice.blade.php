@@ -51,7 +51,7 @@
             <div class="halfcell rightcell" id="extra-price-display">&pound;0</div>
         </div>
 
-        <ul id="optionslist">
+        <ul id="optionslist" style="padding-bottom:100px">
             
         </ul>
     </div>

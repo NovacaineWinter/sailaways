@@ -47,13 +47,17 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">
        <!-- <link href="{{{url('/css/fonts.css')}}}" rel="stylesheet" type="text/css">-->
 
+
+
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!--<script src="{{{url('/js/jquery.min.js')}}}"></script>-->
 
+
+
         <!-- Bootstrap -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <!--<link href="{{{url('/css/bootstrap.css')}}}" rel="stylesheet" type="text/css">-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
+        <link href="{{{url('/css/bootstrap.css')}}}" rel="stylesheet" type="text/css">
         
         <!-- Application styles -->
         <link href="{{{ url('css/style.css') }}}" rel="stylesheet" type="text/css">
@@ -109,14 +113,15 @@
             @yield('content')
         </div>
 
-        <div id="footer">
-            <div class="links">
-                <a href="{{{ url('/') }}}">Home</a>
-                <a href="{{{ url('/dataprotection') }}}">Data Protection</a>
-                <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>                
+        @if(!isset($suppressFooter))
+            <div id="footer">
+                <div class="links">
+                    <a href="{{{ url('/') }}}">Home</a>
+                    <a href="{{{ url('/dataprotection') }}}">Data Protection</a>
+                    <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>                
+                </div>
+                 <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg"  class="brandingimg" alt="logo"/>
             </div>
-             <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg"  class="brandingimg" alt="logo"/>
-        </div>
-
+        @endif
     </body>
 </html>
