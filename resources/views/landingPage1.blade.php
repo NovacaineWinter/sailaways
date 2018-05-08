@@ -144,6 +144,24 @@
 
 
 	                    </div>
+
+                        
+                        <div class="taglineholder">
+                            <p class="tagline">
+                                &nbsp;
+                            </p>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <h1 style="margin:75px 0px">Want A fully Fitted Boat?</h1>
+                                <a href="http://www.nottinghamboatco.com" class="btn btn-info btn-lg" style="margin:50px 0px">Visit Nottingham Boat Co</a>
+                            </div>
+                        </div>
+
+
+
                        
 	            </section>
             </div>
