@@ -465,12 +465,10 @@ input[type=checkbox] {
 .centerBottomButton{
     position: absolute;
     bottom:25px;
-    left:0;
-    right:0;
-    margin:auto;
-    width:fit-content;
-    width: -webkit-fit-content;
+    left:25%;
+    right:25%;
 
+    width:50%;
 }
 
 
