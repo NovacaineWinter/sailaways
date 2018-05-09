@@ -67,6 +67,8 @@ Route::get('/', 'landingPageController@pageSelector');
 Route::get('/stock', 'stockBoatController@index');
 Route::get('/stock/detail', 'stockBoatController@detail');
 
+Route::get('/model', 'modelController@index');
+
 
 Auth::routes();
 
