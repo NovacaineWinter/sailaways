@@ -44,14 +44,14 @@
         <title>@yield('title')</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">
-       <!-- <link href="{{{url('/css/fonts.css')}}}" rel="stylesheet" type="text/css">-->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">-->
+        <link href="{{{url('/css/fonts.css')}}}" rel="stylesheet" type="text/css">
 
 
 
         <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!--<script src="{{{url('/js/jquery.min.js')}}}"></script>-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <script src="{{{url('/js/jquery.min.js')}}}"></script>
 
 
 
@@ -81,6 +81,8 @@
     
         <div id="navbar">
             <div class="top-right links pcdevice" id="fullwidth">
+                <a href="http://www.nottinghamboatco.com">Fully Fitted Boats</a>
+                <a>&nbsp;</a>
                 <a href="{{{ url('/') }}}">Home</a>
                 <a href="{{{ url('stock') }}}" class="navborder">Boats in Stock</a>
                 <a href="{{{ url('configure') }}}" class="navborder">Configure My Sailaway</a>
@@ -118,6 +120,7 @@
                 <div class="links">
                     <a href="{{{ url('/') }}}">Home</a>
                     <a href="{{{ url('/dataprotection') }}}">Data Protection</a>
+                    <a href="{{{ url('/cookiePolicy') }}}">Cookie Policy</a>
                     <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>                
                 </div>
                  <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg"  class="brandingimg" alt="logo"/>

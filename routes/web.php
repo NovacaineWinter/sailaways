@@ -55,7 +55,8 @@ Route::post('/edit-stock-boat/photo','dashboardController@addPhoto')->middleware
 
 Route::get('/faq',function() {return view('faq')->with('questions',\App\faq::all());});
 
-Route::get('/dataprotection', function() { return view('dataProtection'); });
+Route::get('/cookiePolicy', function() { return view('dataProtection'); });
+Route::get('/dataprotection', function() { return view('gdpr'); });
 
 Route::get('/contact', function () { return view('contact'); });
 
