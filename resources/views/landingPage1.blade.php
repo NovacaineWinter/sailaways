@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net | Home
+    Nottingham Boat Co | Home
 @endsection
 
 @extends('layouts.masterTemplate')
@@ -11,7 +11,7 @@
                 <div class="bannerimg" id="homebanner">
                 	<a href="#info">
 	                	<div id="cta">
-	                		<h1>A Sailaway is more than<br>just a boat <br>.<br> It's your home</h1>
+	                		<h1>Quality.<br>Without Compromise</h1>
 	                		<h4>Discover</h4>
 	                		<h1>v</h1>
 	                	</div>
@@ -30,7 +30,7 @@
 
 	                    <div class="row">
 
-		                    <div class="col-sm-6 homecard" style="background-image:url('/img/img12.jpg');">
+		                    <div class="col-sm-6 homecard" style="background-image:url('/img/home2.jpg');">
 		                    	
 		                    </div>
 

@@ -81,11 +81,11 @@
     
         <div id="navbar">
             <div class="top-right links pcdevice" id="fullwidth">
-                <a href="http://www.nottinghamboatco.com">Fully Fitted Boats</a>
+                <a href="http://sailaways.net">Sailaways</a>
                 <a>&nbsp;</a>
                 <a href="{{{ url('/') }}}">Home</a>
                 <a href="{{{ url('stock') }}}" class="navborder">Boats in Stock</a>
-                <a href="{{{ url('configure') }}}" class="navborder">Configure My Sailaway</a>
+                <a href="{{{ url('model') }}}" class="navborder">Range</a>
                 <a href="{{{ url('contact') }}}">Contact Us</a>
                 <!--<a href="" id="cookieExpandArrow">&#8681;</a>-->
             </div>

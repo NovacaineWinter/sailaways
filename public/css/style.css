@@ -1,7 +1,7 @@
 
 html, body {
     background-color: #fff;
-    color: #636b6f;
+    color: #122134;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     height: 100vh;
@@ -179,10 +179,10 @@ a:hover{
 }
 
 .taglineholder{
-    background-color: #ff7404;
+    background-color: #0077cf;
     padding: 20px 0px;
-    border-top: 25px solid #83817e;
-    border-bottom: 25px solid #83817e;
+    border-top: 25px solid #122134;
+    border-bottom: 25px solid #122134;
 }
 
 .textcontainer{
@@ -191,7 +191,7 @@ a:hover{
 
 #navbar{
     height: 69px;   
-    background-color: #83817e;
+    background-color: #122134;
     position: fixed;
     width: 100vw;
     z-index: 2;
@@ -199,7 +199,7 @@ a:hover{
 
 #footer{
     height: 69px;   
-    background-color: #83817e; 
+    background-color: #122134; 
     padding-top: 20px;
     position:absolute;
     width:100%;
@@ -412,12 +412,12 @@ input[type=checkbox] {
 
 
 #navbar .navborder{
-    border: 1px solid #ff7404;
+    border: 1px solid #0077cf;
     padding: 10px 25px;
 }
 #navbar .navborder:hover{
     background-color:#fdfdfd;
-    color:#83817e;
+    color:#122134;
 }
 
 .bannerimg{
@@ -427,7 +427,7 @@ input[type=checkbox] {
 }
 
 #homebanner{
-    background-image: url(/img/img1.jpg);
+    background-image: url(/img/home1.jpg);
 }
 
 #contactbanner{
@@ -438,14 +438,14 @@ input[type=checkbox] {
     background-image: url(/img/data.jpg);
     height:35vh; 
     color: #fdfdfd;
-    text-shadow: 1px 1px 2px #83817e;
+    text-shadow: 1px 1px 2px #122134;
 }
 
 #faqbanner{
     background-image: url(/img/river.jpg);
     height:35vh; 
     color: #fdfdfd;
-    text-shadow: 1px 1px 2px #83817e;
+    text-shadow: 1px 1px 2px #122134;
     background-position-y: 560px;
 }
 .boatcard{
@@ -579,7 +579,7 @@ html[xmlns] .clearfix {
     top: 50px;
     position: fixed;
     right: 0px;
-    background-color: #83817e;
+    background-color: #122134;
     padding: 20px;
     border-left: 1px solid #e8e8e8;
     border-bottom:1px solid #e8e8e8;
@@ -609,13 +609,13 @@ html[xmlns] .clearfix {
 
 
 .btn-info{
-    background-color: #ff7404;
-    border-color:#ff7404;
+    background-color: #0077cf;
+    border-color:#0077cf;
     margin-top:20px;
 }
 .btn-info:hover{
-    background-color:#83817e;
-    border-color:#83817e;
+    background-color:#122134;
+    border-color:#122134;
 }
 
 #nbclogoimg{
@@ -632,7 +632,7 @@ html[xmlns] .clearfix {
     border-bottom:1px solid #e7e7e7;
     background-color:#fdfdfd;
     z-index:2;
-    color:#636b6f;
+    color:#122134;
     display:none;
 }
 
@@ -644,9 +644,9 @@ html[xmlns] .clearfix {
 
 
 .questionHeader{
-    border: 1px solid #636b6f;
+    border: 1px solid #122134;
     padding: 10px;
-    color: #636b6f;
+    color: #122134;
     font-size: 19px;
     text-transform: capitalize;
 }
@@ -657,14 +657,14 @@ html[xmlns] .clearfix {
 
 
 .questionContent{
-    border:1px solid #636b6f;
+    border:1px solid #122134;
     display:none;
 }
 
 
 .expandFaq{
     padding:5px;
-    border:1px solid #636b6f;
+    border:1px solid #122134;
     text-align: center;
     cursor:pointer;
 }
