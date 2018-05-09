@@ -23,7 +23,7 @@
 
                         <div class="taglineholder">
     	                    <p class="tagline">
-                                Life on the water provides freedom, luxury and a new way of living. Building your very own sailaway gets you way more for your money, and allows you to get things exactly how you want them. 
+                                The quality of life on the water is second to none, it provides freedom, luxury and a new way of living. Buying a new boat is an investment in your future. Build to exacting standards, we provide nothing but the very best. We look forward to welcoming you into the Nottingham Boat Co family when you choose us to build your home. 
                             </p>
                         </div>
 
