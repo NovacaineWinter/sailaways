@@ -34,10 +34,8 @@
                             <tr>
                               <th>Length</th>
                               <th>Width</th>
-                              <th>Leisure Price</th>
-                              @if($info['boat']->configuration->qualifyingShip)
-                                <th> Liveaboard Price </th>
-                              @endif
+                              <th>Price</th>
+     
                             </tr>
                           </thead>
                           <tbody>
@@ -45,10 +43,8 @@
                               <td>{{{ $info['boat']->configuration->length->ft }}}ft</td>
                               <td>{{{ $info['boat']->configuration->width->ft }}}ft</td>
 
-                              <td>&pound;{{{ number_format($info['boat']->price * 1.2) }}}</td>
-                              @if($info['boat']->configuration->qualifyingShip)
-                                <td>&pound;{{{ number_format($info['boat']->price + 1500,0) }}}</td>
-                              @endif                            
+                              <td>&pound;{{{ number_format($info['boat']->price ) }}}</td>
+                                             
                             </tr>
                           </tbody>
                         </table>
