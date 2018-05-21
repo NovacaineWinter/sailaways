@@ -43,6 +43,19 @@ Route::get('enquiries','dashboardController@enquiries')->middleware('auth');
 
 Route::get('/stock-boat-admin','dashboardController@manageStockBoats')->middleware('auth');
 
+
+
+
+
+Route::get('/model-admin','dashboardController@manageModels')->middleware('auth');
+
+Route::get('/edit-model','dashboardController@editModel')->middleware('auth');
+
+
+/*Route::post('/edit-model/photo','dashboardController@addModelPhoto')->middleware('auth');*/
+
+
+
 Route::get('/edit-stock-boat','dashboardController@editStockBoat')->middleware('auth');
 
 Route::post('/edit-stock-boat/specsheet','dashboardController@addSpecSheet')->middleware('auth');
@@ -68,6 +81,7 @@ Route::get('/stock', 'stockBoatController@index');
 Route::get('/stock/detail', 'stockBoatController@detail');
 
 Route::get('/model', 'modelController@index');
+Route::get('/model/detail', 'modelController@detail');
 
 
 Auth::routes();

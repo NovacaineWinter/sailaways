@@ -117,6 +117,42 @@ class dashboardController extends Controller
 
 
 
+    public function manageModels(Request $request){ 
+        if($request->has('title') && $request->has('shortDescription') && $request->has('fullDescription') && $request->has('price') && $request->has('nonce')){
+            //currently trying to create a new boat as the post/get params are present
+
+            if(\App\hull_style::where('nonce','=',$request->get('nonce'))->count() == 0){
+                $new = new \App\hull_style;
+
+                $new->title         = $request->get('title'); 
+                $new->shortSummary  = $request->get('shortDescription'); 
+                $new->description   = $request->get('fullDescription'); 
+                $new->startPrice    = $request->get('price'); 
+                $new->nonce         = $request->get('nonce');
+
+                $new->save();
+                
+            }
+
+        }
+
+            //just trying to see the breakdown of boats in stock
+
+            $data['boats'] = \App\hull_style::all();
+            $data['lengths'] = \App\length::all();
+            $data['widths'] = \App\width::all();
+            $data['hulls'] = \App\hull_style::all();
+            return view('inside.manageModels')->with('data',$data);
+        
+    }
+
+
+
+
+
+
+
+
     public function editStockBoat(Request $request){
 
 
@@ -241,6 +277,94 @@ class dashboardController extends Controller
         }
     
     }
+
+
+
+
+
+    public function editModel(Request $request){
+
+
+        if($request->has('title') && 
+            $request->has('shortDescription') && 
+            $request->has('fullDescription') && 
+            $request->has('price') && 
+            $request->has('target')         
+            ){
+            //update old boat
+
+            $toEdit = \App\hull_style::find($request->get('target'));
+
+
+
+            if($request->hasFile('specsheet')){
+                $toEdit->specsheet = $request->file('specsheet')->store('public');
+            }
+
+            if($toEdit){
+
+                $toEdit->name          = $request->get('title'); 
+                $toEdit->shortSummary  = $request->get('shortDescription'); 
+                $toEdit->description   = $request->get('fullDescription'); 
+                $toEdit->startPrice    = $request->get('price'); 
+                
+                $toEdit->save();       
+            }
+        
+            $data['boats'] = \App\stock_boats::all();
+            $data['lengths'] = \App\length::all();
+            $data['widths'] = \App\width::all();
+            $data['hulls'] = \App\hull_style::all();
+            return view('inside.manageModels')->with('data',$data);
+     
+
+
+        }elseif($request->has('target')){
+
+            $boat = \App\hull_style::where('id','=',$request->get('target'))->first();
+
+            if($boat){
+                $data['lengths'] = \App\length::all();
+                $data['widths'] = \App\width::all();
+                $data['hulls'] = \App\hull_style::all();
+                $data['target']= $boat;
+                return view('inside.modelDetail')->with('data',$data);
+
+            }else{
+                //just return the summary view as the target was not passed correctly
+
+                $data['boats'] = \App\hull_style::all();
+                $data['lengths'] = \App\length::all();
+                $data['widths'] = \App\width::all();
+                $data['hulls'] = \App\hull_style::all();
+                return view('inside.modelDetail')->with('data',$data);
+            }
+
+
+
+
+
+
+
+        }else{
+            //just return the summary view as the target was not passed correctly
+
+            $data['boats'] = \App\hull_style::all();
+            $data['lengths'] = \App\length::all();
+            $data['widths'] = \App\width::all();
+            $data['hulls'] = \App\hull_style::all();
+            return view('inside.manageModels')->with('data',$data);  
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     public function ajax(Request $request){
     	if($request->has('ajaxmethod')){

@@ -11,4 +11,11 @@ class modelController extends Controller
     	$info['boats']=\App\hull_style::all();
     	return view('models')->with('info',$info);
     }
+
+
+    public function detail(Request $request){
+    	$info=[];
+    	$info['boat'] = \App\hull_style::find($request->get('target'));
+    	return view('modelDetail')->with('info',$info);
+    }
 }

@@ -32,9 +32,9 @@
 
                 
                 <div class="cardfooter">
-                    <p>{{{ $boat->description }}}</p>
+                    <p>{{{ $boat->shortsummary }}}</p>
 
-                    <a href="{{{ url('/stock/detail/?target='.$boat->id) }}}" class="btn btn-info btn-lg centerBottomButton">
+                    <a href="{{{ url('/model/detail/?target='.$boat->id) }}}" class="btn btn-info btn-lg centerBottomButton">
                     	View more
                     </a>
                 </div>
