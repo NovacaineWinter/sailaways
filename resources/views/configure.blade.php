@@ -2,7 +2,7 @@
 @extends('layouts.masterTemplate',['suppressFooter'=>1])
 
 @section('title')
-    SAILAWAYS.NET
+    Nottingham Boat Co 
 @endsection
 
 

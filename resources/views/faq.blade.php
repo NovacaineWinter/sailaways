@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net | Data Protection
+    Nottingham Boat Co s | Data Protection
 @endsection
 
 @extends('layouts.masterTemplate')

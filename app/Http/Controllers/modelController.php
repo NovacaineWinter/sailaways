@@ -8,7 +8,7 @@ class modelController extends Controller
 {
     public function index(Request $request){
     	$info=[];
-    	$info['boats']=\App\stock_boats::all()->sortBy('sold');
+    	$info['boats']=\App\hull_style::all();
     	return view('models')->with('info',$info);
     }
 }

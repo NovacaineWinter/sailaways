@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net
+    Nottingham Boat Co 
 @endsection
 
 @extends('layouts.masterTemplate')

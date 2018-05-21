@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net | Stock
+    Nottingham Boat Co  | Stock
 @endsection
 
 

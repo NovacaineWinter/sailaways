@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net | Stock
+    Nottingham Boat Co | Models
 @endsection
 
 
@@ -20,22 +20,19 @@
                 <!--  Boat {{{ $boat['id'] }}} -->
 
                 <div class="boatcard col-lg-5">
-                    @if($boat->sold)
-                        <div class="soldBanner">SOLD</div>
-                    @endif
                     <div class="cardtitle">
-                        <h3>{{{ $boat->title }}}</h3>
+                        <h3>{{{ $boat->name }}}</h3>
                     </div>
 
-                @if($boat->img->count()>0)
-                    <div class="cardimage" style="background-image:url('{{ url(Storage::url($boat->img->sortByDesc('primary')->first()->src)) }}')"></div>
+                @if($boat->images->count()>0)
+                    <div class="cardimage" style="background-image:url('{{ url(Storage::url($boat->images->sortByDesc('primary')->first()->src)) }}')"></div>
                 @else
                     <div class="cardimage" style="background-image:url('{{ url('/img/defaultBoat.png') }}')"></div>
                 @endif
 
                 
                 <div class="cardfooter">
-                    <p>{{{ $boat->shortsummary }}}</p>
+                    <p>{{{ $boat->description }}}</p>
 
                     <a href="{{{ url('/stock/detail/?target='.$boat->id) }}}" class="btn btn-info btn-lg centerBottomButton">
                     	View more

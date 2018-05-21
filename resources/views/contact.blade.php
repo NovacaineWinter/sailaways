@@ -1,6 +1,6 @@
 
 @section('title')
-    Sailaways.net | Contact Us
+    Nottingham Boat Co  | Contact Us
 @endsection
 
 @extends('layouts.masterTemplate')
