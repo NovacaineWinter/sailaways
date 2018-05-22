@@ -7,7 +7,7 @@
  		@foreach($data['boats'] as $boat)
 			<div class="row paddedrow questionContainer questionHeader">
 		 			@if($boat->images->count()>0)
-		 				<div class="col-sm-2 img150pix"><img src="{{ url(Storage::url($boat->img->sortByDesc('primary')->first()->src)) }}"></div>
+		 				<div class="col-sm-2 img150pix"><img src="{{ url(Storage::url($boat->images->sortByDesc('primary')->first()->src)) }}"></div>
                   	@else
                   		<div class="col-sm-2 img150pix"><img src="{{ url('/img/defaultBoat.png') }}"></div>
                   	@endif    
