@@ -116,6 +116,30 @@ class dashboardController extends Controller
 
 
 
+    public function addModelSpecSheet(Request $request){
+
+        if($request->hasFile('specsheet') && $request->has('target')){
+
+            $boat = \App\hull_style::find($request->get('target'));
+            $boat->specsheet = $request->file('specsheet')->store('public');
+            $boat->save();
+
+            return redirect('edit-model?target='.$request->get('target'));
+        }
+    }
+    public function addModelPhoto(Request $request){
+
+        if($request->hasFile('photo') && $request->has('target')){
+
+            $img = new \App\modelImages;
+            $img->src = $request->file('photo')->store('public');
+            $img->model_id = $request->get('target');
+            $img->save();
+
+            return redirect('edit-model?target='.$request->get('target'));
+        }
+    }
+
 
     public function manageModels(Request $request){ 
         if($request->has('title') && $request->has('shortDescription') && $request->has('fullDescription') && $request->has('price') && $request->has('nonce')){
@@ -124,11 +148,12 @@ class dashboardController extends Controller
             if(\App\hull_style::where('nonce','=',$request->get('nonce'))->count() == 0){
                 $new = new \App\hull_style;
 
-                $new->title         = $request->get('title'); 
+                $new->name         = $request->get('title'); 
                 $new->shortSummary  = $request->get('shortDescription'); 
                 $new->description   = $request->get('fullDescription'); 
                 $new->startPrice    = $request->get('price'); 
                 $new->nonce         = $request->get('nonce');
+                $new->img           = '';
 
                 $new->save();
                 

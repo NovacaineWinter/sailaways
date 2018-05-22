@@ -14,7 +14,7 @@
 				
 				<div class="col-sm-2 text-right">{{{$boat->name}}}</div>
 				<div class="col-sm-4">{{{$boat->shortsummary}}}</div>
-				<div class="col-sm-2">&pound;{{{ number_format($boat->price)}}}</div>
+				<div class="col-sm-2">&pound;{{{ number_format($boat->startPrice)}}}</div>
 				<div class="col-sm-2"><a class="btn btn-info btn-lg" href="{{{ url('edit-model?target='.$boat->id) }}}">Edit</a></div>
 			</div>	
  		@endforeach

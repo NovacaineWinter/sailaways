@@ -72,7 +72,7 @@
 				</div>
 			</div>	
        
-			
+			<input type="hidden" value="{{{ $data['target']->nonce }}}" name="nonce">
 			<input type="hidden" value="{{{ $data['target']->id }}}" name="target">
 
 

@@ -52,7 +52,7 @@ Route::get('/model-admin','dashboardController@manageModels')->middleware('auth'
 Route::get('/edit-model','dashboardController@editModel')->middleware('auth');
 
 
-/*Route::post('/edit-model/photo','dashboardController@addModelPhoto')->middleware('auth');*/
+Route::post('/edit-model/photo','dashboardController@addModelPhoto')->middleware('auth');
 
 
 
