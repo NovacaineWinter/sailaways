@@ -36,8 +36,8 @@
 
 
 
-                      <div class="col-sm-6"><p class="vertcenteredtext">
-                        {!! $info['boat']->description !!}</p>
+                      <div class="col-sm-6">
+                        <p>{!! $info['boat']->description !!}</p>
                       </div>
 
                    	</div>
