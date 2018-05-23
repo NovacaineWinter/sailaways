@@ -12,7 +12,7 @@
             <div class="content">
                 <div class="container">
                   	<div class="title m-b-md">
-                        {{{$info['boat']->title}}}
+                        {{{$info['boat']->name}}}
                    	</div>
 
 
