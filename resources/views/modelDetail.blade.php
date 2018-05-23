@@ -19,7 +19,7 @@
                    	<div class="row">
 
                       @if($info['boat']->images->count()>0)
-                         <div class="col-sm-6 imagetile" target="{{ Storage::url($info['boat']->img->sortByDesc('primary')->first()->src) }}"></div>
+                         <div class="col-sm-6 imagetile" target="{{ Storage::url($info['boat']->images->sortByDesc('primary')->first()->src) }}"></div>
                       @else
                         <div class="col-sm-6 imagetile" target="{{ url('/img/defaultBoat.png') }}"></div>
                       @endif    
