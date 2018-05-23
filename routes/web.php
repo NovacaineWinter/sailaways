@@ -12,13 +12,15 @@
 */
 
 
-/* Configurator stuff */
-Route::get('/configure', 'configController@index');
 
-Route::get('/configure/ajax', 'configController@configAjax');
+if(env('HAS_CONFIGURATOR')){ /* Configurator stuff */
 
-Route::get('/configure/save','configController@saveMyConfig');
+	Route::get('/configure', 'configController@index');
 
+	Route::get('/configure/ajax', 'configController@configAjax');
+
+	Route::get('/configure/save','configController@saveMyConfig');
+}
 
 
 

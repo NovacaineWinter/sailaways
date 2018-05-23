@@ -2,11 +2,12 @@
 <div id="modal">
     <div class="col-sm-12">
         <h1>Enter Your Email</h1>
-        <p>We can save your configuration so you can view it later, if you wish to discuss your boat with us, tick the box and we'll be in touch</p>
+        <p>Save your configuration</p>
         <input type="text" name="name" class="userinput" id="nameInput" placeholder="Your Name"><br>
         <input type="email" name="email" class="userinput" id="emailAddressField" placeholder="Enter Your Email"><br>
-        <div class="btn btn-info saveMyConfig" contact="0">Just Save My <br>Configuration</div>
-        <div class="btn btn-info saveMyConfig" contact="1">Discuss my design <br>with sailaways.net</div>
+        
+        <div class="btn btn-info saveMyConfig" contact="1">Finish Configuration</div>
+        <p>By saving your configuration, we will securely store your name, email address and boat details for the purpose of dealing with your enquiry. <br>View our <a href="{{{ url('dataprotection') }}}">data protection policy</a> for info on how we manage your data and how to excercise your rights udner data protection rules</p>       
         
     </div>
 </div>

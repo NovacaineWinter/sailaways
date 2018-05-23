@@ -1,6 +1,6 @@
 
 @section('title')
-    Nottingham Boat Co | Home
+    {{{ env('SITE_NAME')}}} | Home
 @endsection
 
 @extends('layouts.masterTemplate')

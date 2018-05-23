@@ -12,6 +12,8 @@ use App\configuration;
 use App\length;
 use App\width;
 
+use \DrewM\Mailchimp\Mailchimp;
+
 
 
 
@@ -122,6 +124,12 @@ class configController extends Controller
 					$c->save();
 				}
 				$return = $userConfig->code;
+				if($userConfig->can_contact){
+					//send to mailchimp
+					$mc = new Mailchimp(env('MAILCHIMP_KEY'));
+					$mc->post("lists".env('MAILCHIMP_CONFIGURATOR_SAVE_LIST_ID')."members",['email_address'=>$userConfig->email,'status'=>'subscribed']);
+
+				}
 			}
 
 			$this->generateEmailFromEnquiry($userConfig);

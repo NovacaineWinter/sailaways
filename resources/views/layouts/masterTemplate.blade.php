@@ -84,8 +84,9 @@
                 <a href="http://sailaways.net">Sailaways</a>
                 <a>&nbsp;</a>
                 <a href="{{{ url('/') }}}">Home</a>
-                <a href="{{{ url('stock') }}}" class="navborder">Boats in Stock</a>
-                <a href="{{{ url('model') }}}" class="navborder">Range</a>
+                <a href="{{{ url('stock') }}}" class="navborder">Boats in Stock</a>                
+                <a href="{{{ url('model') }}}" class="navborder">Explore Range</a>
+                @if(env('HAS_CONFIGURATOR')) <a href="{{{ url('configure') }}}" class="navborder">Build My Boat</a> @endif
                 <a href="{{{ url('contact') }}}">Contact Us</a>
                 <!--<a href="" id="cookieExpandArrow">&#8681;</a>-->
             </div>
