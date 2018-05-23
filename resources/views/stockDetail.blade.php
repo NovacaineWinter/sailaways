@@ -24,7 +24,7 @@
                         <div class="col-sm-6 imagetile" target="{{ url('/img/defaultBoat.png') }}"></div>
                       @endif    
 
-                      <div class="col-sm-6"><p class="vertcenteredtext">{{{ $info['boat']->description }}}</p></div>
+                      <div class="col-sm-6"><p class="vertcenteredtext">{!! $info['boat']->description !!}</p></div>
 
                    	</div>
 

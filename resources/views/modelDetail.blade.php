@@ -24,12 +24,12 @@
                         <div class="col-sm-6 imagetile" target="{{ url('/img/defaultBoat.png') }}"></div>
                       @endif    
 
-                      <div class="col-sm-6"><p class="vertcenteredtext">{{{ $info['boat']->description }}}</p></div>
+                      <div class="col-sm-6"><p class="vertcenteredtext">{!! $info['boat']->description !!}</p></div>
 
                    	</div>
 
                     Prices starting from &pound; {{{$info['boat']->startPrice}}}                    
-
+                    <br><br>
 
                     <a href="{{ url(Storage::url($info['boat']->specsheet)) }}" class="btn btn-info btn-lg">Download Specsheet</a>
                    	<h2>&nbsp;</h2>
