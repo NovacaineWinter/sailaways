@@ -20,12 +20,11 @@
 
 
                        @if($info['boat']->img->count()>0)
-
-                        @foreach($info['boat']->img->sortByDesc('primary') as $img)
-                          <div class="col-sm-6" style="padding:15px">                            
-                            <div class="imagetile" target="{{ Storage::url($img->src) }}"></div>
-                          </div>
-                        @endforeach                                          
+                          <div class="col-sm-6" >     
+                            @foreach($info['boat']->img->sortByDesc('primary') as $img)                       
+                              <div class="imagetile" style="padding:15px" target="{{ Storage::url($img->src) }}"></div>
+                            @endforeach 
+                          </div>           
 
                       @else
                         <div class="col-sm-6 imagetile" target="{{ url('/img/defaultBoat.png') }}"></div>
