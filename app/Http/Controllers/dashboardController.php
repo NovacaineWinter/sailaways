@@ -533,6 +533,9 @@ class dashboardController extends Controller
                     break;
 
 
+
+
+
                 case 'updatePrimaryImage':
                     if($request->has('targetBoat') && $request->has('targetImage')){
                         $boat = \App\stock_boats::find($request->get('targetBoat'));
@@ -549,6 +552,27 @@ class dashboardController extends Controller
                     }
                     return 'true';
                     break;
+
+
+
+                case 'updateModelPrimaryImage':
+                    if($request->has('targetBoat') && $request->has('targetImage')){
+                        $boat = \App\hull_style::find($request->get('targetBoat'));
+                        $boat->setPrimaryImage($request->get('targetImage'));
+                    }
+                    return 'true';
+                    break;
+
+
+                case 'deleteModelImage':
+                    if($request->has('targetBoat') && $request->has('targetImage')){
+                        $boat = \App\hull_style::find($request->get('targetBoat'));
+                        $boat->deleteImage($request->get('targetImage'));
+                    }
+                    return 'true';
+                    break;
+
+
 
                 case 'setDiscussionStarted':
                     if($request->has('target')){

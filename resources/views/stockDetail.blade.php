@@ -15,6 +15,28 @@
                         {{{$info['boat']->title}}}
                    	</div>
 
+                      <div class="col-sm-12">
+                        <table style="width:100%;text-align:center; margin:40px 0px">
+                          <thead>
+                            <tr>
+                              <th>Length</th>
+                              <th>Width</th>
+                              <th>Price</th>
+     
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>{{{ $info['boat']->configuration->length->ft }}}ft</td>
+                              <td>{{{ $info['boat']->configuration->width->ft }}}ft</td>
+
+                              <td>&pound;{{{ number_format($info['boat']->price ) }}}</td>
+                                             
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
 
                    	<div class="row">
 
@@ -38,27 +60,7 @@
 
                    	</div>
 
-                      <div class="col-sm-12">
-                        <table style="width:100%;text-align:center; margin:40px 0px">
-                          <thead>
-                            <tr>
-                              <th>Length</th>
-                              <th>Width</th>
-                              <th>Price</th>
-     
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>{{{ $info['boat']->configuration->length->ft }}}ft</td>
-                              <td>{{{ $info['boat']->configuration->width->ft }}}ft</td>
 
-                              <td>&pound;{{{ number_format($info['boat']->price ) }}}</td>
-                                             
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
 
 
 

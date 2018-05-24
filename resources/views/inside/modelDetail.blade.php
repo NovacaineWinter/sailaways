@@ -106,10 +106,10 @@
 			</div>
 			@if(!$image->primary)
 				<div class="col-sm-3 vertcenteredtext" style="text-align: center;">
-					<div class="btn btn-lg btn-red imageButton" method="deleteImage" image="{{{ $image->id }}}" boat="{{{ $data['target']->id }}}">Delete</div>
+					<div class="btn btn-lg btn-red imageButton" method="deleteModelImage" image="{{{ $image->id }}}" boat="{{{ $data['target']->id }}}">Delete</div>
 				</div>
 				<div class="col-sm-3 vertcenteredtext" style="text-align: center;">
-					<div class="btn btn-lg btn-info imageButton" method="updatePrimaryImage" image="{{{ $image->id }}}" boat="{{{ $data['target']->id }}}">Set As Primary</div>
+					<div class="btn btn-lg btn-info imageButton" method="updateModelPrimaryImage" image="{{{ $image->id }}}" boat="{{{ $data['target']->id }}}">Set As Primary</div>
 				</div>
 			@else
 				<div class="col-sm-6 vertcenteredtext" style="text-align: center;">
