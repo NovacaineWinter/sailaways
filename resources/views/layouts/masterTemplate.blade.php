@@ -81,7 +81,7 @@
     
         <div id="navbar">
             <div class="top-right links pcdevice" id="fullwidth">
-                <a href="http://sailaways.net">Sailaways</a>
+                <a href="http://nottinghamboatco.com" class="navborder">Fully Fitted boats</a>
                 <a>&nbsp;</a>
                 <a href="{{{ url('/') }}}">Home</a>
                 <a href="{{{ url('stock') }}}" class="navborder">Boats in Stock</a>                
@@ -122,7 +122,7 @@
                     <a href="{{{ url('/') }}}">Home</a>
                     <a href="{{{ url('/dataprotection') }}}">Data Protection</a>
                     <a href="{{{ url('/cookiePolicy') }}}">Cookie Policy</a>
-                    <a href="{{{ url('/cookiePolicy') }}}">Settings</a>
+                    <a href="{{{ url('/settings') }}}">Settings</a>
                     <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>                
                 </div>
                  <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg"  class="brandingimg" alt="logo"/>

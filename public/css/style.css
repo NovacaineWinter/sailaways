@@ -1,7 +1,7 @@
 
 html, body {
     background-color: #fff;
-    color: #122134;
+    color: #636b6f;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     height: 100vh;
@@ -16,6 +16,8 @@ a:hover{
     text-decoration: none;
 }
 
+
+
 .cookiebuttons{
     margin:0px 10px;
     padding:20px;
@@ -27,14 +29,14 @@ a:hover{
     text-transform: uppercase;
     font-size: 2vw;
     color:#fdfdfd;
-    background-color:#120134;
+    background-color:#83817e;
 }
 #cookieExplainer{
     box-sizing: border-box;
     padding:5vw;
 }
 #acceptCookies{
-    background-color: #0077cf;
+    background-color: #ff7404;
     color:#fdfdfd;
     cursor:pointer;
 }
@@ -208,10 +210,10 @@ a:hover{
 }
 
 .taglineholder{
-    background-color: #0077cf;
+    background-color: #ff7404;
     padding: 20px 0px;
-    border-top: 25px solid #122134;
-    border-bottom: 25px solid #122134;
+    border-top: 25px solid #83817e;
+    border-bottom: 25px solid #83817e;
 }
 
 .textcontainer{
@@ -220,7 +222,7 @@ a:hover{
 
 #navbar{
     height: 69px;   
-    background-color: #122134;
+    background-color: #83817e;
     position: fixed;
     width: 100vw;
     z-index: 2;
@@ -228,7 +230,7 @@ a:hover{
 
 #footer{
     height: 69px;   
-    background-color: #122134; 
+    background-color: #83817e; 
     padding-top: 20px;
     position:absolute;
     width:100%;
@@ -441,12 +443,12 @@ input[type=checkbox] {
 
 
 #navbar .navborder{
-    border: 1px solid #0077cf;
+    border: 1px solid #ff7404;
     padding: 10px 25px;
 }
 #navbar .navborder:hover{
     background-color:#fdfdfd;
-    color:#122134;
+    color:#83817e;
 }
 
 .bannerimg{
@@ -456,7 +458,7 @@ input[type=checkbox] {
 }
 
 #homebanner{
-    background-image: url(/img/home1.jpg);
+    background-image: url(/img/img1.jpg);
 }
 
 #contactbanner{
@@ -467,14 +469,14 @@ input[type=checkbox] {
     background-image: url(/img/data.jpg);
     height:35vh; 
     color: #fdfdfd;
-    text-shadow: 1px 1px 2px #122134;
+    text-shadow: 1px 1px 2px #83817e;
 }
 
 #faqbanner{
     background-image: url(/img/river.jpg);
     height:35vh; 
     color: #fdfdfd;
-    text-shadow: 1px 1px 2px #122134;
+    text-shadow: 1px 1px 2px #83817e;
     background-position-y: 560px;
 }
 .boatcard{
@@ -608,7 +610,7 @@ html[xmlns] .clearfix {
     top: 50px;
     position: fixed;
     right: 0px;
-    background-color: #122134;
+    background-color: #83817e;
     padding: 20px;
     border-left: 1px solid #e8e8e8;
     border-bottom:1px solid #e8e8e8;
@@ -638,13 +640,13 @@ html[xmlns] .clearfix {
 
 
 .btn-info{
-    background-color: #0077cf;
-    border-color:#0077cf;
+    background-color: #ff7404;
+    border-color:#ff7404;
     margin-top:20px;
 }
 .btn-info:hover{
-    background-color:#122134;
-    border-color:#122134;
+    background-color:#83817e;
+    border-color:#83817e;
 }
 
 #nbclogoimg{
@@ -661,7 +663,7 @@ html[xmlns] .clearfix {
     border-bottom:1px solid #e7e7e7;
     background-color:#fdfdfd;
     z-index:2;
-    color:#122134;
+    color:#636b6f;
     display:none;
 }
 
@@ -673,9 +675,9 @@ html[xmlns] .clearfix {
 
 
 .questionHeader{
-    border: 1px solid #122134;
+    border: 1px solid #636b6f;
     padding: 10px;
-    color: #122134;
+    color: #636b6f;
     font-size: 19px;
     text-transform: capitalize;
 }
@@ -686,14 +688,14 @@ html[xmlns] .clearfix {
 
 
 .questionContent{
-    border:1px solid #122134;
+    border:1px solid #636b6f;
     display:none;
 }
 
 
 .expandFaq{
     padding:5px;
-    border:1px solid #122134;
+    border:1px solid #636b6f;
     text-align: center;
     cursor:pointer;
 }
