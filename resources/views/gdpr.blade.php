@@ -1,6 +1,6 @@
 
 @section('title')
-    Nottingham Boat Co  | Data Protection
+    {{{ env('SITE_NAME')}}} | Data Protection
 @endsection
 
 @extends('layouts.masterTemplate')

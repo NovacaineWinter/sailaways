@@ -23,7 +23,6 @@ if(env('HAS_CONFIGURATOR')){ /* Configurator stuff */
 }
 
 
-
 /* Admin Stuff  */
 
 
@@ -75,6 +74,8 @@ Route::get('/dataprotection', function() { return view('gdpr'); });
 
 Route::get('/contact', function () { return view('contact'); });
 
+
+Route::get('/settings', function () { return view('settings'); });
 
 Route::get('/', 'landingPageController@pageSelector');
 

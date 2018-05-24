@@ -1,9 +1,11 @@
+@extends('layouts.masterTemplate')
+
 
 @section('title')
     {{{ env('SITE_NAME')}}} | Home
 @endsection
 
-@extends('layouts.masterTemplate')
+
 
 @section('content')
 
@@ -23,7 +25,7 @@
 
                         <div class="taglineholder">
     	                    <p class="tagline">
-                                The quality of life on the water is second to none, it provides freedom, luxury and a new way of living. Buying a new boat is an investment in your future. Build to exacting standards, we provide nothing but the very best. We look forward to welcoming you into the Nottingham Boat Co family when you choose us to build your home. 
+                                The quality of life on the water is second to none, it provides freedom, luxury and a new way of living. Buying a new boat is an investment in your future. Built to exacting standards, we provide nothing but the very best. We look forward to welcoming you into the Nottingham Boat Co family when you choose us to build your home. 
                             </p>
                         </div>
 
@@ -147,13 +149,5 @@
 @endsection
 
 @section('cookiebar')
-    <div id="cookiebar">
-        <div id="cookieinfo">
-            <p>
-                This website uses cookies. Find out this affects you <a href="{{{url('/dataprotection')}}}">HERE.</a>
-                <button class="cookiebuttons" id="rejectCookies">Reject</button>
-                <button class="cookiebuttons" id="acceptCookies">Accept Cookies</button>
-            </p>
-        </div>            
-    </div>   
+    @include('cookiebar')   
 @endsection

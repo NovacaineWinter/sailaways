@@ -1,6 +1,6 @@
 
 @section('title')
-    Nottingham Boat Co  | Stock
+    {{{ env('SITE_NAME')}}} | Stock
 @endsection
 
 

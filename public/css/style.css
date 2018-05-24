@@ -18,14 +18,39 @@ a:hover{
 
 .cookiebuttons{
     margin:0px 10px;
+    padding:20px;
 }
-
+#cookiebar{
+    text-align: center;
+}
+#cookieHeader{
+    text-transform: uppercase;
+    font-size: 2vw;
+    color:#fdfdfd;
+    background-color:#120134;
+}
+#cookieExplainer{
+    box-sizing: border-box;
+    padding:5vw;
+}
+#acceptCookies{
+    background-color: #0077cf;
+    color:#fdfdfd;
+    cursor:pointer;
+}
+#acceptCookies:hover{
+    background-color: green;
+    color:#fdfdfd;
+}
+#cookieExplainer h3,#cookieExplainer p{
+    padding:10px 0px;
+}
 #cookiebar{
     position: fixed;
-    top: 69px;
-    width: 100vw;
-    right: 0px;
-    height: 69px;
+    top: 20vh;
+    width: 80vw;
+    right: 10vw;
+    height: 60vh;
     background-color: #fdfdfd;
     border-bottom: 1px solid #e8e8e8;
     display:none;
@@ -35,6 +60,10 @@ a:hover{
     float:right;
     padding-top:19px;
 }
+
+
+
+
 
 #blankout{
     position: fixed;

@@ -2,7 +2,7 @@
 @extends('layouts.masterTemplate',['suppressFooter'=>1])
 
 @section('title')
-    Nottingham Boat Co 
+    {{{ env('SITE_NAME')}}}  
 @endsection
 
 

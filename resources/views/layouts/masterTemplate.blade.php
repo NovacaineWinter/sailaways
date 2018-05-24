@@ -122,6 +122,7 @@
                     <a href="{{{ url('/') }}}">Home</a>
                     <a href="{{{ url('/dataprotection') }}}">Data Protection</a>
                     <a href="{{{ url('/cookiePolicy') }}}">Cookie Policy</a>
+                    <a href="{{{ url('/cookiePolicy') }}}">Settings</a>
                     <a href="{{{ url('/') }}}">&copy; Nottingham Boat Co LTD {{{ date('Y') }}}</a>                
                 </div>
                  <img src="{{{ url('img/contact.png') }}}" style="position:absolute" id="footimg"  class="brandingimg" alt="logo"/>

@@ -1,6 +1,6 @@
 
 @section('title')
-    Nottingham Boat Co  | Contact Us
+    {{{ env('SITE_NAME')}}} | Contact Us
 @endsection
 
 @extends('layouts.masterTemplate')

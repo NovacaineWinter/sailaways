@@ -27,8 +27,26 @@ function getOptionsSelected(){
      }
 }
 
+function deleteCookies() {
+    
+    url=document.head.querySelector("[property=siteurl]").content.substring(document.head.querySelector("[property=siteurl]").content.indexOf(":") + 3);
+    document.cookie = '_gid' + '=; Path=/; Domain=.'+url+'; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = '_ga' + '=; Path=/; Domain=.'+url+'; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = 'acceptCookies' + '=; Path=/; Domain=.'+url+'; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
+    var cookies = document.cookie.split(";");
 
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        document.cookie = name + '=; Path=/; Domain=.'+url+'; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        document.cookie = name + '=; Path=/; Domain='+url+'; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+
+    $('#removeCookies').html('Done!');
+}
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -215,6 +233,8 @@ function completeJS(){
     $(window).on('scroll',function() {
         manageCookieBar();
     });
+
+    $('#removeCookies').off().click(deleteCookies);
 
     $('#acceptCookies').off().click(acceptCookies);
     $('#rejectCookies').off().click(rejectCookies);    

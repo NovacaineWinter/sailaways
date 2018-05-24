@@ -1,6 +1,6 @@
 
 @section('title')
-    Nottingham Boat Co | Models
+    {{{ env('SITE_NAME')}}} | Models
 @endsection
 
 
