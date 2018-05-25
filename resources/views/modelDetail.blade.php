@@ -14,7 +14,7 @@
                   	<div class="title m-b-md">
                         {{{$info['boat']->name}}}
                    	</div>
-
+                    Prices starting from &pound; {{{$info['boat']->startPrice}}} 
 
                    	<div class="row">
 
@@ -38,11 +38,11 @@
 
                    	</div>
 
-                    Prices starting from &pound; {{{$info['boat']->startPrice}}}                    
+                                       
                     <br><br>
 
-                    <a href="{{ url(Storage::url($info['boat']->specsheet)) }}" class="btn btn-info btn-lg">Download Specsheet</a>
-                   	<h2>&nbsp;</h2>
+<!--                     <a href="{{ url(Storage::url($info['boat']->specsheet)) }}" class="btn btn-info btn-lg">Download Specsheet</a>
+                   	<h2>&nbsp;</h2> -->
                    	
                 </div>
             </div>
