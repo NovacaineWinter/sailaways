@@ -91,7 +91,7 @@ class configController extends Controller
 
 
 	public function saveMyConfig(Request $request){
-		if($request->has('config_id') && $request->has('name') && $request->has('email') && $request->has('options') && $request->has('contact')){
+		if($request->has('config_id') && $request->has('name') && $request->has('email') && $request->has('options')){
 			$oldConfig = \App\userConfig::where('email','=',$request->get('email'))->get();
 
 			if($oldConfig->count()>0){
@@ -107,13 +107,14 @@ class configController extends Controller
 						}
 				$return = $oldConfig->first()->code;
 				$userConfig= $oldConfig->first();
+
 			}else{
 				$userConfig = new \App\userConfig;
 				$userConfig->name = $request->get('name');
 				$userConfig->email = $request->get('email');
 				$userConfig->code = str_random(5);
 				$userConfig->configuration_id = $request->get('config_id');
-				$userConfig->can_contact = $request->get('contact');
+				$userConfig->can_contact = true;
 				$userConfig->save();
 				$userConfig->code = $userConfig->id + 605;
 				$userConfig->save();
